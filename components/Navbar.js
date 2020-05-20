@@ -1,28 +1,32 @@
 /******************************************
  *  Author : Author
  *  Created On : Wed May 20 2020
- *  File : component1.js
+ *  File : Navbar.js
  *******************************************/
 
-/*Put your imports here */
+/*===Put imports here===*/
 import Link from "next/link";
-import Debugtest from "../components/Debugtester";
-import Navbar from "../components/Navbar";
+import styles from "./Navbar.module.css";
 
-/*Start coding from here */
+/*===Start code here===*/
+const Navbar = () => (
+  <div className={styles.Navbar}>
+    <ul>
+      <li>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </li>
+    </ul>
+  </div>
+);
 
-const About = () => {
-  return (
-    <div>
-      <Debugtest />
-      <Navbar />
-
-      <h1>Hello this is the about page</h1>
-    </div>
-  );
-};
-
-export default About;
+export default Navbar;
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

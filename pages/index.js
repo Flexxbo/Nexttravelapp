@@ -5,17 +5,24 @@
  *******************************************/
 
 /*Put your imports here */
-import Debugtest from "./Debugtester";
+import Link from "next/link";
+import Debugtest from "../components/Debugtester";
+import Navbar from "../components/Navbar";
+
 /*Start coding from here */
 
-export default () => {
+const Index = () => {
   return (
     <div>
       <Debugtest />
+      <Navbar />
+
       <h1>Hello this is index.js</h1>
     </div>
   );
 };
+
+export default Index;
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task
