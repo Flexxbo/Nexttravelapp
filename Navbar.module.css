@@ -17,15 +17,12 @@
 /*+ .CLASSES +*/
 
 /****** header *********/
-.Navbar {
-  border: tomato 2px solid;
-  display: flex;
-  justify-content: flex-start;
-}
+
 .Navbar > ul {
+  background-color: black;
   border: green solid 1px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   list-style: none;
 }
 .Navbar > ul > li {
@@ -34,7 +31,9 @@
   margin-right: 40px;
   margin-left: 0px;
 }
-
+.Navbar > ul > li > a {
+  color: white;
+}
 /****** main content *********/
 
 /****** footer *********/

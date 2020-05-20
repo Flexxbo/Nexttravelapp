@@ -4,22 +4,26 @@
  *  File : debugtester.js
  *******************************************/
 /*Put your imports here */
-import styles from "./Debugtester.module.css";
+//import styles from "./Debugtester.module.css";
 /*Start coding from here */
 let x = 1;
 const clickerClick = () => {
-  console.log(x);
+  console.log(x + "clicks since pageload");
   x += 1;
 };
 console.log("This gets logged on pageload");
 export default function Debugtest() {
   return (
-    <div className={styles.debugtest}>
-      <p onClick={clickerClick}>
-        I´m just the debugtester. press F5 to start the debugger and see in the
-        Debug Console wether the clickable logs work. Log on Load are shown in
-        Terminal allready on load{" "}
-      </p>
+    <div>
+      <button
+        onClick={clickerClick}
+        type="button"
+        className="btn btn-danger btn-lg btn-block"
+      >
+        I´m just the debugtester. press F5 in VSCode or F12 in Chrome to start
+        the debugger and see in the Debug Console wether the clickable logs
+        work. Log on Load are shown in Terminal allready on load
+      </button>
     </div>
   );
 }

@@ -5,13 +5,21 @@
  *******************************************/
 
 /*===Put imports here===*/
-import Link from "next/link";
+import Head from "next/head";
 import Debugtest from "../components/Debugtester";
 import Navbar from "./Navbar";
 
 /*===Start code here===*/
 const Layout = (props) => (
   <div>
+    <Head>
+      <title>Reise nach Kuba</title>
+      <link
+        rel="stylesheet"
+        href="https://bootswatch.com/4/cerulean/bootstrap.min.css"
+      ></link>
+    </Head>
+
     <Debugtest />
     <Navbar />
     {props.children}
