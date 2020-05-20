@@ -5,24 +5,22 @@
  *******************************************/
 
 /*Put your imports here */
-import Link from "next/link";
-import Debugtest from "../components/Debugtester";
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
 
 /*Start coding from here */
 
-const About = () => {
+const about = () => {
   return (
-    <div>
-      <Debugtest />
-      <Navbar />
-
-      <h1>Hello this is the about page</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>Hello this is the about page</h1>
+        <p>This is where I talk about...</p>
+      </div>
+    </Layout>
   );
 };
 
-export default About;
+export default about;
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

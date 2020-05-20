@@ -1,26 +1,24 @@
 /******************************************
  *  Author : Author
  *  Created On : Wed May 20 2020
- *  File : index.js
+ *  File : Layout.js
  *******************************************/
 
-/*Put your imports here */
-import Layout from "../components/Layout";
+/*===Put imports here===*/
+import Link from "next/link";
+import Debugtest from "../components/Debugtester";
+import Navbar from "./Navbar";
 
-/*Start coding from here */
+/*===Start code here===*/
+const Layout = (props) => (
+  <div>
+    <Debugtest />
+    <Navbar />
+    {props.children}
+  </div>
+);
 
-const Index = () => {
-  return (
-    <Layout>
-      <div>
-        <h1>Hello this is index.js</h1>
-        <p>This is where more content will go</p>
-      </div>
-    </Layout>
-  );
-};
-
-export default Index;
+export default Layout;
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task
