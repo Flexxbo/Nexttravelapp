@@ -8,10 +8,11 @@
 import Head from "next/head";
 import Debugtest from "../components/Debugtester";
 import Navbar from "./Navbar";
+import Footerbar from "./Footerbar";
 
 /*===Start code here===*/
 const Layout = (props) => (
-  <div>
+  <div className="layout">
     <Head>
       <title>Reise nach Kuba</title>
       <link
@@ -23,6 +24,13 @@ const Layout = (props) => (
     <Debugtest />
     <Navbar />
     {props.children}
+    <Footerbar />
+    <style jsx>{`
+      .layout {
+        margin-left: 10vw;
+        margin-right: 10vw;
+      }
+    `}</style>
   </div>
 );
 

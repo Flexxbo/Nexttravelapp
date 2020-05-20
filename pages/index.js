@@ -6,15 +6,25 @@
 
 /*Put your imports here */
 import Layout from "../components/Layout";
+import Imageboxcontainer from "../components/Imageboxcontainer";
+import Topbox from "../components/Topbox";
 
 /*Start coding from here */
 
 const Index = () => {
   return (
     <Layout>
-      <div>
+      <div className="pagetop">
         <h1>Hello this is index.js</h1>
         <p>This is where more content will go</p>
+        <Topbox />
+        <Imageboxcontainer />
+        <style jsx>{`
+          .pagetop {
+            text-align: center;
+            border: 1px black solid;
+          }
+        `}</style>
       </div>
     </Layout>
   );
