@@ -8,6 +8,11 @@
 import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import MyComp from "../components/ComponentLoader";
+
+//import MyComp from "../components/ComponentLoader";
 
 /*Start coding from here */
 
@@ -18,6 +23,7 @@ const Index = () => {
         <h1>Hello this is index.js</h1>
         <p>This is where more content will go</p>
         <Topbox />
+        <MyComp />
         <Imageboxcontainer />
         <style jsx>{`
           .pagetop {
