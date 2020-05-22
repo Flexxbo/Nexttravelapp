@@ -10,7 +10,7 @@
 /*===Put imports here===*/
 import React, { useState, useEffect } from "react";
 import Test from "./Test";
-//import MyMap from "./MyMap";
+//import MyMapCopy from "./MyMapCopy";
 
 /*===Start code here===*/
 
@@ -32,9 +32,8 @@ export default function MyCompTest() {
     console.log("This is the console log of window" + window.value);
     return (
       <div>
-        {/*<MyMap lat={52.52} lng={13.405} />*/}
+        {/*<MyMapCopy lat={52.52} lng={13.405} />*/}
         <Test />
-
         <button
           onClick={checker}
           type="button"
@@ -43,6 +42,7 @@ export default function MyCompTest() {
         >
           Press to see state of inBrowser in console
         </button>
+        This is mycompTest without map
       </div>
     );
   }

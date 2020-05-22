@@ -10,7 +10,7 @@
 /*===Put imports here===*/
 import React, { useState, useEffect } from "react";
 import Test from "./Test";
-import MyMap from "./MyMap";
+//import MyMap from "./MyMap";
 
 /*===Start code here===*/
 
@@ -29,7 +29,7 @@ export default function MyComp() {
   {
     const checker = () => {
       console.log("clicked button map should appear");
-      
+
       return <div>{/*<MyMap lat={52.52} lng={13.405} />*/}</div>;
     };
     console.log("now component mounted");
@@ -47,6 +47,7 @@ export default function MyComp() {
         >
           Press to see state of inBrowser in console
         </button>
+        This is the MyComp
       </div>
     );
   }
