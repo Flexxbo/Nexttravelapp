@@ -8,15 +8,20 @@
 import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import MyComp from "../components/ComponentLoader";
+import React from "react";
+import MyComp from "../components/ComponentLoadercopy";
+import window from "global";
+import Client from "../components/Contentfulcomp";
+import Clientcomplete from "../components/Contentfulcomplete";
 
 //import MyComp from "../components/ComponentLoader";
 
 /*Start coding from here */
 
 const Index = () => {
+  /*if (typeof window === "undefined") {
+    global.window = {};
+  }*/
   return (
     <Layout>
       <div className="pagetop">
@@ -25,6 +30,7 @@ const Index = () => {
         <Topbox />
         <MyComp />
         <Imageboxcontainer />
+
         <style jsx>{`
           .pagetop {
             text-align: center;
