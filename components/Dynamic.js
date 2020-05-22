@@ -9,22 +9,36 @@
 /*===Start code here===*/
 
 import dynamic from "next/dynamic";
+import styles from "./Map.module.css";
 
-const DynamicComponentWithNoSSR = dynamic(() => import("./MyMap"), {
+const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
 });
 
-function Home() {
+function DynamicComponent() {
   return (
     <div>
       <h1>Here is a Dynamic component</h1>
-      <DynamicComponentWithNoSSR lat={52.52} lng={13.405} />
+      <DynamicComponentWithNoSSR
+        className={styles.mapid}
+        lat={52.52}
+        lng={13.405}
+      />
       <p>HOME PAGE is here!</p>
     </div>
   );
 }
 
-export default Home;
+export default DynamicComponent;
+
+/*      <style jsx>{`
+        .mapboxsize {
+          backgroud-color: green;
+          height: 300px;
+          width: 300px;
+          border: red 5px solid;
+        }
+      `}</style>*/
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

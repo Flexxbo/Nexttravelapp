@@ -1,0 +1,93 @@
+/******************************************
+*  Author : Author   
+*  Created On : Fri May 22 2020
+*  File : Map.module.css
+*******************************************/
+
+/* ! READ BOTTOM FOR CSS BEST PREACTICES ! */
+
+.mapid {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+  border: olive 5px solid;
+}
+.leaflet-container {
+  width: 100%;
+  height: 800px;
+}
+
+/*+ TAGS +*/
+
+/****** header *********/
+
+/****** main content *********/
+
+/****** footer *********/
+
+/*+ .CLASSES +*/
+
+/****** header *********/
+
+/****** main content *********/
+
+/****** footer *********/
+
+/*+ #ID +*/
+
+/****** header *********/
+
+/****** main content *********/
+
+/****** footer *********/
+
+/* ! Best practices === */
+
+/* ? ==Each style gets its own line== */
+/*
+* .someDiv {
+*   background: red;
+*   padding: 2em;
+*   border: 1px solid black;
+* }
+*/
+
+/* ?  ==Organize the Stylesheet with a Top-down Structure== */
+/*
+*   Generic classes (body, a, p, h1, etc.)
+*   #header
+*   #nav-menu
+*   #main-content
+*/
+
+/* ? ==Alphabetize your Properties== */
+/*
+#cotton-candy {
+*    color: #fff;
+*    float: left;
+*    font-weight:
+*    height: 200px;
+*    margin: 0;
+*    padding: 0;
+*    width: 150px;
+* }
+*/
+
+/* ? ==Combine Elements== */
+
+/* 
+*h1, h2, h3 {font-family: tahoma, color: #333}
+*/
+
+/* ? ==Understand the Difference Between Block vs. Inline Elements== */
+/*
+*Block elements are elements that naturally clear each line after they are declared, spanning the whole width of the available space. Inline elements take only as much space as they need, and don't force a new line after they're used.
+
+*Here are the lists of elements that are either inline or block:
+*span, a, strong, em, img, br, input, abbr, acronym
+
+*And the block elements:
+*div, h1...h6, p, ul, li, table, blockquote, pre, form
+*/
