@@ -7,7 +7,7 @@ import styles from "./Map.module.css";
 
 export default function MyMap({ lat, lng }) {
   return (
-    <Map className={styles.mapid} center={[lat, lng]} zoom={20}>
+    <Map className={styles.mapid} center={[lat, lng]} zoom={7}>
       <TileLayer
         className={styles.mapid}
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

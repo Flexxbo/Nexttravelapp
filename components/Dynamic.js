@@ -21,8 +21,8 @@ function DynamicComponent() {
       <h1>Here is a Dynamic component</h1>
       <DynamicComponentWithNoSSR
         className={styles.mapid}
-        lat={52.52}
-        lng={13.405}
+        lat={21.737731}
+        lng={-79.914551}
       />
       <p>HOME PAGE is here!</p>
     </div>
@@ -32,7 +32,7 @@ function DynamicComponent() {
 export default DynamicComponent;
 
 /*      <style jsx>{`
-        .mapboxsize {
+        .mapboxsize {21.737731, -79.914551
           backgroud-color: green;
           height: 300px;
           width: 300px;
