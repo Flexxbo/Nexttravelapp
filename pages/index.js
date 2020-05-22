@@ -9,8 +9,9 @@ import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
 import React from "react";
-import MyCompTest from "../components/ComponentLoadercopy";
+//import MyCompTest from "../components/ComponentLoadercopy";
 //import MyComp from "../components/ComponentLoader";
+import Home from "../components/Dynamic";
 
 import window from "global";
 import Client from "../components/Contentfulcomp";
@@ -21,17 +22,19 @@ import Clientcomplete from "../components/Contentfulcomplete";
 /*Start coding from here */
 
 const Index = () => {
-   if (typeof window === "undefined") {
+  /*if (typeof window === "undefined") {
     global.window = {};
-  }
+  }*/
   return (
     <Layout>
       <div className="pagetop">
         <h1>Hello this is index.js</h1>
         <p>This is where more content will go</p>
         <Topbox />
-        <MyCompTest />
+        {/*<MyCompTest />
+        <MyComp />*/}
         <Imageboxcontainer />
+        <Home />
 
         <style jsx>{`
           .pagetop {
