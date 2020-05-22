@@ -10,7 +10,7 @@
 /*===Put imports here===*/
 import React, { useState, useEffect } from "react";
 import Test from "./Test";
-//import MyMap from "./MyMap";
+import MyMap from "./MyMap";
 
 /*===Start code here===*/
 
@@ -28,9 +28,13 @@ export default function MyComp() {
   }
   {
     const checker = () => {
-      return <MyMap lat={52.52} lng={13.405} />;
+      console.log("clicked button map should appear");
+      
+      return <div>{/*<MyMap lat={52.52} lng={13.405} />*/}</div>;
     };
-    console.log("now component mounted");*/
+    console.log("now component mounted");
+    console.log("This is the console log of window" + window);
+
     return (
       <div>
         {/*<MyMap lat={52.52} lng={13.405} />*/}

@@ -12,7 +12,7 @@ function tester() {
   console.log("tester works");
 }
 
-const Map = () => {
+const Test = () => {
   console.log("component mounted and set state inBrowser to true");
   return (
     <div>
@@ -25,7 +25,7 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default Test;
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

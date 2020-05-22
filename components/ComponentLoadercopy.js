@@ -10,12 +10,11 @@
 /*===Put imports here===*/
 import React, { useState, useEffect } from "react";
 import Test from "./Test";
-
 //import MyMap from "./MyMap";
 
 /*===Start code here===*/
 
-export default function MyComp() {
+export default function MyCompTest() {
   const [inBrowser, setInBrowser] = useState(false);
 
   // Similar to componentDidMount and componentDidUpdate:
@@ -30,11 +29,12 @@ export default function MyComp() {
   {
     const checker = () => console.log(inBrowser);
     console.log("now component mounted");
+    console.log("This is the console log of window" + window.value);
     return (
       <div>
         {/*<MyMap lat={52.52} lng={13.405} />*/}
         <Test />
-        
+
         <button
           onClick={checker}
           type="button"
