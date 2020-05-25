@@ -11,20 +11,22 @@ import { useEffect, useState } from "react";
 /*===Start code here===*/
 
 export default function Markers() {
-  let [data, setData] = useState([]);
+  let [data, setData] = useState([]); // ! Need to wait for component to load before using fetched data
 
   useEffect(() => {
     Cliententry.getEntries({
+      // * coming from import contentful-component, that connects to API
       content_type: "destinationContent",
     })
       .then((entries) => {
         console.log("something", entries);
-        setData(entries.items);
+        setData(entries.items); // * entries is object, items is array, need array to map below
       })
       .catch((err) => console.log("An error occured: " + err));
-  }, []); // +stopping the reload
+  }, []); // ! stopping the reload with []
 
   return (
+    // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
     <>
       {data.map((item) => {
         console.log(item);
@@ -33,8 +35,9 @@ export default function Markers() {
           <Marker key={Math.random()} position={item.fields.location}>
             <Popup>
               {item.fields.name}
-              <button>fresgr</button>
-              {/* I can put a component here */}
+              <button>Button 1 - add to itinerary</button>
+              <button>Button 2 - close</button>
+              {/* I can put a component here, for example button component */}
             </Popup>
           </Marker>
         );
@@ -43,37 +46,6 @@ export default function Markers() {
   );
 }
 
-/*
-export default function Markers() {
-  let [data, setData] = useState([]);
-  useEffect(() => {
-    Cliententry.getEntries({
-      content_type: "destinationContent",
-      //["fields." + category]: true, // thanks to ES6, this is possible
-      //order: "-sys.createdAt", // sort by newest items first (reverse order with the prefixed -)
-      // TODO: create state variable for sorting options and pass it here
-    })
-      .then((entries) => {
-        console.log("something", entries);
-      })
-      .catch((err) => console.log("An error occured: " + err));
-  }, []); // +stopping the reload
-  return entries.map(function (item) {
-    return (
-      <Marker
-        key={item.id}
-        position={(item.fields.location.lat, item.fields.location.lon)}
-      >
-        <Popup>{item.field.name}</Popup>
-      </Marker>
-    );
-  });
-}*/
-/*
-<Marker position={[lat, lng]}>
-  <Popup>Hey!</Popup>
-</Marker>;
-*/
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task
 // "! Alert - Whenever you need an alert
