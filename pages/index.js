@@ -11,7 +11,7 @@ import Topbox from "../components/Topbox";
 import MapComponent from "../components/Dynamic";
 //import styles from "../components/Map.module.css";
 // *The contentful imports below have to be there, though they don´t get used yet, only console.log(ged)
-import Client from "../components/Contentfulcomp";
+import Cliententry from "../components/Contentfulcomp";
 import Clientcomplete from "../components/Contentfulcomplete";
 
 /*Start coding from here */

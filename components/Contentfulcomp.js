@@ -13,16 +13,18 @@ const client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
   space: "ef40ww67o2nx",
   // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-  accessToken: "zj3BwiovKyNON5IRKJIXkZagco2DpjVz2zDijyklLC4",
+  accessToken: "zj3BwiovKyNON5IRKJIXkZagco2DpjVz2zDijyklLC4", //! ACHTUNG ACCESSTOKEN AENDERN UND VERSTECKEN  !
 });
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 client
-  .getEntry("7fJxFgrJD0EMJsbZQhhSIz")
+  .getEntry("7fJxFgrJD0EMJsbZQhhSIz") //! ACHTUNG ACCESSTOKEN AENDERN UND VERSTECKEN  !
   .then((entry) => {
     console.log(
       "This is what the console.log of one entry -contentfulcomp.js- looks like:"
     );
     console.log(entry);
+    console.log(entry.fields.location.lat);
+    console.log(entry.fields.location.lon);
   })
   .catch((err) => console.log(err));
 
