@@ -23,7 +23,12 @@ clientcomplete
     //order: "-sys.createdAt", // sort by newest items first (reverse order with the prefixed -)
     // TODO: create state variable for sorting options and pass it here
   })
-  .then((entries) => console.log(entries))
+  .then((entries) => {
+    console.log(
+      "This is what the console.log of the whole API -contentfulcomplete.js- looks like:"
+    );
+    console.log(entries);
+  })
   .catch((err) => console.log("An error occured: " + err));
 
 export default clientcomplete;

@@ -18,7 +18,12 @@ const client = contentful.createClient({
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 client
   .getEntry("7fJxFgrJD0EMJsbZQhhSIz")
-  .then((entry) => console.log(entry))
+  .then((entry) => {
+    console.log(
+      "This is what the console.log of one entry -contentfulcomp.js- looks like:"
+    );
+    console.log(entry);
+  })
   .catch((err) => console.log(err));
 
 export default client;

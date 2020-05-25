@@ -1,6 +1,12 @@
+/******************************************
+ *  Author : Flexxbo
+ *  Created On : Wed May 20 2020
+ *  File : Layout.js
+ *******************************************/
+
 import React from "react";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-import L from "leaflet";
+//import L from "leaflet";
 import styles from "./Map.module.css";
 
 //import "./MyMap.css";

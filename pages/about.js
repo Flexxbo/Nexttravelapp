@@ -6,15 +6,27 @@
 
 /*Put your imports here */
 import Layout from "../components/Layout";
+import Imageboxcontainer from "../components/Imageboxcontainer";
+import Topbox from "../components/Topbox";
+import MapComponent from "../components/Dynamic";
 
 /*Start coding from here */
 
 const about = () => {
   return (
     <Layout>
-      <div>
+      <div className="pagetop">
         <h1>Hello this is the about page</h1>
         <p>This is where I talk about...</p>
+        <Topbox />
+        <Imageboxcontainer />
+        <MapComponent />
+        <style jsx>{`
+          .pagetop {
+            text-align: center;
+            border: 1px black solid;
+          }
+        `}</style>
       </div>
     </Layout>
   );

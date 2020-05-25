@@ -1,22 +1,26 @@
 /******************************************
- *  Author : Author
+ *  Author : Flexxbo
  *  Created On : Wed May 20 2020
- *  File : index.js
+ *  File : Layout.js
  *******************************************/
 
 /*Put your imports here */
 import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
-import Home from "../components/Dynamic";
-import styles from "../components/Map.module.css";
-
+import MapComponent from "../components/Dynamic";
+//import styles from "../components/Map.module.css";
+// *The contentful imports below have to be there, though they don´t get used yet, only console.log(ged)
 import Client from "../components/Contentfulcomp";
 import Clientcomplete from "../components/Contentfulcomplete";
 
-//var window = require("global/window")
-
 /*Start coding from here */
+
+// ? Index.js is the main page. There is no HTML Page since Next is SSR and gives out an HTML format
+// ? Everything that should be in Html Head (meta-stuff/imports) is in Layout-component-Head
+// TODO: Check wether it is ok to have same meta tags and imports in all subpages that us the layout
+// * Topbox and Imagebox containers only for giving a visual environment for app to be integrated
+// * Mapcomponent <-- Dynamic <-- import from Mapbox.js
 
 const Index = () => {
   return (
@@ -26,7 +30,7 @@ const Index = () => {
         <p>This is where more content will go</p>
         <Topbox />
         <Imageboxcontainer />
-        <Home />
+        <MapComponent />
 
         <style jsx>{`
           .pagetop {
