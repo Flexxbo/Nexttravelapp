@@ -11,7 +11,8 @@ import { useEffect, useState } from "react";
 /*===Start code here===*/
 
 export default function Markers() {
-  let [data, setData] = useState([]); // ! Need to wait for component to load before using fetched data
+  let [data, setData] = useState([]);
+  // ! Need to wait for component to load before using fetched data
 
   useEffect(() => {
     Cliententry.getEntries({
@@ -20,10 +21,12 @@ export default function Markers() {
     })
       .then((entries) => {
         console.log("something", entries);
-        setData(entries.items); // * entries is object, items is array, need array to map below
+        setData(entries.items);
+        // * entries is object, items is array, need array to map below
       })
       .catch((err) => console.log("An error occured: " + err));
-  }, []); // ! stopping the reload with []
+  }, []);
+  // ! stopping the reload with []
 
   return (
     // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
