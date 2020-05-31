@@ -10,9 +10,8 @@
 
 import dynamic from "next/dynamic";
 import styles from "./Map.module.css";
-import MapSidebar from "./MapSidebar";
 
-const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
+const DynamicComponentWithNoSSR = dynamic(() => import("../MyMapbox"), {
   ssr: false,
 });
 
@@ -20,18 +19,11 @@ function DynamicComponent() {
   return (
     <div className="dynamiccomponent">
       <h2 className="mapheadline">Here is a Dynamic component</h2>
-      <div className="row gridrow">
-        <div className="col-2 gridcolumn">
-          <MapSidebar />
-        </div>
-        <div className="col-10">
-          <DynamicComponentWithNoSSR
-            className={styles.mapid}
-            lat={21.737731}
-            lng={-79.914551}
-          />
-        </div>
-      </div>
+      <DynamicComponentWithNoSSR
+        className={styles.mapid}
+        lat={21.737731}
+        lng={-79.914551}
+      />
       <p>HOME PAGE is here!</p>
     </div>
   );

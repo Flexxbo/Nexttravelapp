@@ -22,6 +22,9 @@ import Clientcomplete from "../components/Contentfulcomplete";
 // * Topbox and Imagebox containers only for giving a visual environment for app to be integrated
 // * Mapcomponent <-- Dynamic <-- import from Mapbox.js
 
+
+
+
 const Index = () => {
   return (
     <Layout>

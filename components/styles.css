@@ -1,0 +1,30 @@
+/******************************************
+*  Author : Author   
+*  Created On : Fri May 22 2020
+*  File : Map.module.css
+*******************************************/
+
+
+/*+ TAGS +*/
+
+/*+ .CLASSES +*/
+
+.dynamiccomponent {
+  background-color: yellow;
+}
+.mapheadline {
+  background-color: teal;
+}
+.gridrow {
+  border: red 2px dotted;
+  background-color: rosybrown;
+  margin:0vw;
+}
+.gridcolumn {
+  border: orange 2px dotted;
+}
+
+/*+ #ID +*/
+#MapSidebar {
+  background-color: rgba(134, 112, 134, 0.61);
+}

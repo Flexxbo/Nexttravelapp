@@ -26,6 +26,11 @@ const Footerbar = () => (
               <a className="nav-link">About</a>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link href="/maptest">
+              <a className="nav-link">Maptest</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

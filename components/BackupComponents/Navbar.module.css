@@ -21,6 +21,7 @@
 .Navbar > ul {
   background-color: black;
   border: green solid 1px;
+  color: red;
   display: flex;
   justify-content: flex-start;
   list-style: none;

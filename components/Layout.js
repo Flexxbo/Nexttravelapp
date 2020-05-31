@@ -6,17 +6,17 @@
 
 /*===Put imports here===*/
 import Head from "next/head";
-import Debugtest from "../components/Debugtester";
+import Debugtest from "./testing components/Debugtester";
 import Navbar from "./Navbar";
 import Footerbar from "./Footerbar";
 
 /*===Start code here===*/
 
 // * Head will be the html head
-// * in props.children, there will be the content of the ./pages inserted 
+// * in props.children, there will be the content of the ./pages inserted
 
 const Layout = (props) => (
-  <div className="layout">
+  <div className="container">
     <Head>
       <title>Reise nach Kuba</title>
       <link

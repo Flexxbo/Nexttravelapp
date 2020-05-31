@@ -5,12 +5,9 @@
  *******************************************/
 
 import React from "react";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-//import L from "leaflet";
+import { Map, TileLayer } from "react-leaflet";
 import styles from "./Map.module.css";
 import Markers from "./Markers.js";
-
-//import "./MyMap.css";
 
 export default function MyMap({ lat, lng }) {
   return (
@@ -21,8 +18,7 @@ export default function MyMap({ lat, lng }) {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
       <Markers />
-      
     </Map>
   );
 }
-// 
+//
