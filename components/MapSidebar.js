@@ -4,7 +4,7 @@
  *  File : MapSidebar.js
  *******************************************/
 
-import React, { useState } from "react";
+import React from "react";
 
 /*===Put imports here===*/
 
@@ -30,7 +30,29 @@ return (
   );
 */
 
-let destination = ["Havanna", "Cienfuegos", "Trinidad"];
+let destination = [
+  "Havanna",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+  "Cienfuegos",
+  "Trinidad",
+];
 
 export default function MapSidebar() {
   return destination.map(function (item, i) {

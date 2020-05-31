@@ -21,10 +21,15 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
 function DynamicComponent() {
   return (
     <div className="dynamiccomponent">
-      <h2 className="mapheadline">Here is the Dynamic Map component, rendered Clientside</h2>
+      <h2 className="mapheadline">
+        Here is the Dynamic Map component, rendered Clientside
+      </h2>
       <div className="row gridrow">
         <div className="col-2 gridcolumn">
-          <MapSidebar />
+          <h4 id="Sidebarheader">MapSidebar</h4>
+          <div className="Sidebarscroller">
+            <MapSidebar />
+          </div>
         </div>
         <div className="col-10">
           <DynamicComponentWithNoSSR
