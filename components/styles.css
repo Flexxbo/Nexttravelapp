@@ -4,27 +4,46 @@
 *  File : Map.module.css
 *******************************************/
 
-
 /*+ TAGS +*/
 
 /*+ .CLASSES +*/
 
 .dynamiccomponent {
-  background-color: yellow;
+  border: teal 3px solid;
 }
 .mapheadline {
-  background-color: teal;
+  border: teal 3px solid;
 }
 .gridrow {
   border: red 2px dotted;
-  background-color: rosybrown;
-  margin:0vw;
+  margin: 0vw;
 }
 .gridcolumn {
-  border: orange 2px dotted;
+  border: black 2px dotted;
 }
 
 /*+ #ID +*/
 #MapSidebar {
-  background-color: rgba(134, 112, 134, 0.61);
+  width: 100%;
+  border: brown 1px solid;
+}
+#Sidebarheader {
+}
+#MapTabsOuter {
+  width: 100%;
+  background-color: slategrey;
+}
+#MapTabsInner {
+  border: skyblue 3px solid;
+}
+#MapItineraryOuter {
+  width: 100%;
+  border: 3px black solid;
+}
+
+.ItineraryContent {
+  padding: 1vw;
+  text-align: left;
+  width: 100%;
+  background-color: rosybrown;
 }

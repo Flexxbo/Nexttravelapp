@@ -11,6 +11,8 @@
 import dynamic from "next/dynamic";
 import styles from "./Map.module.css";
 import MapSidebar from "./MapSidebar";
+import MapTabs from "./MapTabs";
+import MapItinerary from "./MapItinerary";
 
 const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
@@ -19,7 +21,7 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
 function DynamicComponent() {
   return (
     <div className="dynamiccomponent">
-      <h2 className="mapheadline">Here is a Dynamic component</h2>
+      <h2 className="mapheadline">Here is the Dynamic Map component, rendered Clientside</h2>
       <div className="row gridrow">
         <div className="col-2 gridcolumn">
           <MapSidebar />
@@ -30,6 +32,12 @@ function DynamicComponent() {
             lat={21.737731}
             lng={-79.914551}
           />
+        </div>
+        <div id="MapTabsOuter">
+          <MapTabs />
+        </div>
+        <div id="MapItineraryOuter">
+          <MapItinerary />
         </div>
       </div>
       <p>HOME PAGE is here!</p>

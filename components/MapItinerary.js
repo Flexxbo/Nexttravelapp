@@ -1,17 +1,21 @@
 /******************************************
  *  Author : Flexxbo
  *  Created On : Sun May 31 2020
- *  File : MapSidebar.js
+ *  File : MapItinerary.js
  *******************************************/
 
 /*===Put imports here===*/
 
 /*===Start code here===*/
-export default function MapSidebar() {
+
+export default function MapItinerary() {
   return (
-    <div id="MapSidebar">
-      <h4 id="Sidebarheader">MapSidebar</h4>
-      <div className="SidebarComp">Name of Destination</div>
+    <div id="MapItinerary">
+      <h3> MapItinerary</h3>
+      <div className="ItineraryContent">
+        <h4>Havanna</h4>
+        <p>This is where content goes, but maybe only buttons to select more</p>
+      </div>
     </div>
   );
 }
