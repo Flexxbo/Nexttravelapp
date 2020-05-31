@@ -21,13 +21,14 @@
 .gridcolumn {
   border: black 2px dotted;
 }
-
-/*+ #ID +*/
-#MapSidebar {
-  width: 100%;
-  border: brown 1px solid;
+.SidebarComp {
+  border: black 1px solid;
+  background-color: lightgrey;
 }
+/*+ #ID +*/
+
 #Sidebarheader {
+  border: brown 1px solid;
 }
 #MapTabsOuter {
   width: 100%;
@@ -37,6 +38,7 @@
   border: skyblue 3px solid;
 }
 #MapItineraryOuter {
+  background-color: brown;
   width: 100%;
   border: 3px black solid;
 }

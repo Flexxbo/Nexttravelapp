@@ -4,14 +4,59 @@
  *  File : MapSidebar.js
  *******************************************/
 
+import React, { useState } from "react";
+
 /*===Put imports here===*/
 
 /*===Start code here===*/
+/*
+const [destination, addDestination] = useState([
+  "Havanna",
+  "Cienfuegos",
+  "Trinidad",
+]);
+
+return (
+    <div id="MapSidebar">
+      <h4 id="Sidebarheader">MapSidebar</h4>
+      <div className="SidebarComp">
+        <button type="button" className="close" aria-label="Close">
+          <span aria-hidden="true">&times; </span>
+        </button>
+        <p>Santiago de Cuba</p>
+      </div>
+      {putSidebar(destination)}
+    </div>
+  );
+*/
+
+let destination = ["Havanna", "Cienfuegos", "Trinidad"];
+
 export default function MapSidebar() {
+  return destination.map(function (item, i) {
+    //console.log("index", i);
+    //console.log("item", item);
+    return (
+      <div className="SidebarComp" id={i}>
+        <button type="button" className="close" aria-label="Close">
+          <span aria-hidden="true">&times; </span>
+        </button>
+        <p>{item}</p>
+      </div>
+    );
+  });
+}
+/*
   return (
     <div id="MapSidebar">
       <h4 id="Sidebarheader">MapSidebar</h4>
-      <div className="SidebarComp">Name of Destination</div>
+      <div className="SidebarComp">
+        <button type="button" className="close" aria-label="Close">
+          <span aria-hidden="true">&times; </span>
+        </button>
+        <p>{item}Cuba</p>
+      </div>
+      {putSidebar(destination)}
     </div>
   );
 }
