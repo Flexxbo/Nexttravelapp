@@ -34,8 +34,9 @@ let destination = [
 
 export default function MapItinerary() {
   return destination.map(function (item, i) {
+    let randomkey = Math.random();
     return (
-      <div id={i}>
+      <div key={randomkey} id={i}>
         <h3> MapItinerary</h3>
         <div className="ItineraryContent">
           <h4>{item}</h4>

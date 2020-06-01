@@ -44,7 +44,7 @@
   width: 100%;
   background-color: slategrey;
 }
-#MapTabsInner {
+.MapTabsInner {
   border: skyblue 3px solid;
 }
 #MapItineraryOuter {

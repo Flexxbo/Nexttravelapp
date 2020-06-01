@@ -58,8 +58,10 @@ export default function MapSidebar() {
   return destination.map(function (item, i) {
     //console.log("index", i);
     //console.log("item", item);
+    let sidekey = Math.random();
+
     return (
-      <div className="SidebarComp" id={i}>
+      <div key={sidekey} className="SidebarComp" id={i}>
         <button type="button" className="close" aria-label="Close">
           <span aria-hidden="true">&times; </span>
         </button>

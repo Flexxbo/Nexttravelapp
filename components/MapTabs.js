@@ -11,7 +11,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 /*===Start code here===*/
 export default function MapTabs() {
   return (
-    <div id="MapTabsInner">
+    <div className="MapTabsInner">
       <Tabs>
         <TabList>
           <Tab>Tab 1</Tab>
