@@ -54,21 +54,29 @@ let destination = [
   "Trinidad",
 ];
 
-export default function MapSidebar() {
-  return destination.map(function (item, i) {
-    //console.log("index", i);
-    //console.log("item", item);
-    let sidekey = Math.random();
+export default function MapSidebar({ triparray }) {
+  let tripSidebar = [];
+  //console.log(typeof triparray);
+  tripSidebar.push(triparray);
+  console.log("tripsidebarlogs", tripSidebar);
+  if (tripSidebar.length >= 1) { //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
+    return triparray.map(function (item, i) {
+      //console.log("index", i);
+      //console.log("item", item);
+      let sidekey = Math.random();
 
-    return (
-      <div key={sidekey} className="SidebarComp" id={i}>
-        <button type="button" className="close" aria-label="Close">
-          <span aria-hidden="true">&times; </span>
-        </button>
-        <p>{item}</p>
-      </div>
-    );
-  });
+      return (
+        <div key={sidekey} className="SidebarComp" id={i}>
+          <button type="button" className="close" aria-label="Close">
+            <span aria-hidden="true">&times; </span>
+          </button>
+          <p>{item}</p>
+        </div>
+      );
+    });
+  } else {
+    return "";
+  }
 }
 /*
   return (
@@ -93,3 +101,30 @@ export default function MapSidebar() {
 // "//commented out
 // "+ Highlight: This needs to be highlited for some reason
 // "@param Explain Parameters
+/*
+
+export default function MapSidebar({ triparray }) {
+  let tripSidebar = [];
+  //console.log(typeof triparray);
+  tripSidebar.push(triparray);
+  console.log("tripsidebarlogs", tripSidebar);
+  if (tripSidebar.length >= 1) { //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
+    return tripSidebar.map(function (item, i) {
+      //console.log("index", i);
+      //console.log("item", item);
+      let sidekey = Math.random();
+
+      return (
+        <div key={sidekey} className="SidebarComp" id={i}>
+          <button type="button" className="close" aria-label="Close">
+            <span aria-hidden="true">&times; </span>
+          </button>
+          <p>{item}</p>
+        </div>
+      );
+    });
+  } else {
+    return "";
+  }
+}
+*/

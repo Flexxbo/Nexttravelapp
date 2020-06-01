@@ -6,10 +6,15 @@
 
 /*===Put imports here===*/
 import React from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList, TabPanel /*resetIdCounter*/ } from "react-tabs";
 
 /*===Start code here===*/
 export default function MapTabs() {
+  /*resetIdCounter();
+ReactDOMServer.renderToString(...);*/
+
+
+
   return (
     <div className="MapTabsInner">
       <Tabs>

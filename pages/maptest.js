@@ -7,20 +7,27 @@
 /*Put your imports here */
 import Layout from "../components/Layout";
 import MapComponent from "../components/Dynamic";
+import { useState } from "react";
 
 /*Start coding from here */
-const addToTrip = (keyelement, valueelement) => {
-  console.log(keyelement);
-  console.log(valueelement);
-};
 
-const about = () => {
+const maptest = () => {
+  let [trip, setTrip] = useState([]);
+  const addToTrip = (keyelement, valueelement, identifier) => {
+    //console.log(keyelement);
+    console.log("maptest valuelement:", valueelement);
+    console.log("maptest identifier:", identifier);
+    setTrip([...trip, valueelement]);
+    console.log("maptest trip:", trip);
+    console.log(typeof trip);
+  };
+  console.log("maptest log trip outside of function", trip, "Outsidelog");
   return (
     <Layout>
       <div className="pagetop">
         <h1>Maptest</h1>
         <p>This is where I test Map</p>
-        <MapComponent addToTrip={addToTrip} />
+        <MapComponent addToTrip={addToTrip} triparray={trip} />
         <style jsx>{`
           .pagetop {
             text-align: center;
@@ -32,7 +39,7 @@ const about = () => {
   );
 };
 
-export default about;
+export default maptest;
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

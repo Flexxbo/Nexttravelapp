@@ -23,7 +23,7 @@ export default function Markers({ addToTrip }) {
       content_type: "destinationContent",
     })
       .then((entries) => {
-        console.log("something", entries);
+        console.log("Markers entries:", entries);
         setData(entries.items);
         // * entries is object, items is array, need array to map below
       })
@@ -36,7 +36,7 @@ export default function Markers({ addToTrip }) {
     <>
       {data.map((item, index) => {
         const key = index;
-        console.log(item);
+        //console.log("Markers item:",item);
         //<p>{JSON.stringify(item)}</p> /*!
         return (
           <Marker key={/*Math.random()*/ key} position={item.fields.location}>
@@ -44,7 +44,7 @@ export default function Markers({ addToTrip }) {
               {item.fields.name} <br></br>
               <button
                 onClick={() => {
-                  addToTrip(key, item.fields.name);
+                  addToTrip(key, item.fields.name, item.fields.identifiercode);
                 }}
               >
                 Add to Trip
