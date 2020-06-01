@@ -54,23 +54,32 @@ let destination = [
   "Trinidad",
 ];
 
-export default function MapSidebar({ triparray }) {
+export default function MapSidebar({ triparray, remove }) {
   let tripSidebar = [];
   //console.log(typeof triparray);
   tripSidebar.push(triparray);
   console.log("tripsidebarlogs", tripSidebar);
-  if (tripSidebar.length >= 1) { //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
+  if (tripSidebar.length >= 1) {
+    //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
     return triparray.map(function (item, i) {
-      //console.log("index", i);
+      console.log("index", i);
       //console.log("item", item);
       let sidekey = Math.random();
+      //console.log("MapSidebar items.id", item.id)
 
       return (
         <div key={sidekey} className="SidebarComp" id={i}>
-          <button type="button" className="close" aria-label="Close">
+          <button
+            onClick={()=>remove(i)/*{remove}*/}
+            type="button"
+            className="close"
+            aria-label="Close"
+          >
             <span aria-hidden="true">&times; </span>
           </button>
-          <p>{item}</p>
+          <p>
+            {i + 1}. {item}
+          </p>
         </div>
       );
     });

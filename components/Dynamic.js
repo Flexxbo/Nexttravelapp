@@ -18,7 +18,7 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
 });
 
-function DynamicComponent({ addToTrip, triparray }) {
+function DynamicComponent({ addToTrip, triparray, remove }) {
   console.log("Dynamic triparray:", triparray);
   return (
     <div className="dynamiccomponent">
@@ -29,7 +29,7 @@ function DynamicComponent({ addToTrip, triparray }) {
         <div className="col-2 gridcolumn">
           <h4 id="Sidebarheader">MapSidebar</h4>
           <div className="Sidebarscroller">
-            <MapSidebar triparray={triparray} />
+            <MapSidebar triparray={triparray} remove={remove} />
           </div>
         </div>
         <div className="col-10">
