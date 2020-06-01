@@ -18,7 +18,7 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
 });
 
-function DynamicComponent() {
+function DynamicComponent({ addToTrip }) {
   return (
     <div className="dynamiccomponent">
       <h2 className="mapheadline">
@@ -36,6 +36,7 @@ function DynamicComponent() {
             className={styles.mapid}
             lat={21.737731}
             lng={-79.914551}
+            addToTrip={addToTrip}
           />
         </div>
         <div id="MapTabsOuter">

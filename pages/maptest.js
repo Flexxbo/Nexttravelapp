@@ -9,6 +9,10 @@ import Layout from "../components/Layout";
 import MapComponent from "../components/Dynamic";
 
 /*Start coding from here */
+const addToTrip = (keyelement, valueelement) => {
+  console.log(keyelement);
+  console.log(valueelement);
+};
 
 const about = () => {
   return (
@@ -16,7 +20,7 @@ const about = () => {
       <div className="pagetop">
         <h1>Maptest</h1>
         <p>This is where I test Map</p>
-        <MapComponent />
+        <MapComponent addToTrip={addToTrip} />
         <style jsx>{`
           .pagetop {
             text-align: center;

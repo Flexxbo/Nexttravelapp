@@ -9,7 +9,9 @@ import { Map, TileLayer } from "react-leaflet";
 import styles from "./Map.module.css";
 import Markers from "./Markers.js";
 
-export default function MyMap({ lat, lng }) {
+
+
+export default function MyMap({ lat, lng, addToTrip }) {
   return (
     <Map className={styles.mapid} center={[lat, lng]} zoom={7}>
       <TileLayer
@@ -17,8 +19,11 @@ export default function MyMap({ lat, lng }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Markers />
+      <Markers addToTrip={addToTrip} />
     </Map>
   );
 }
-//{/*addTo={addToTrip}*/}const addToTrip = (element) => {  console.log(element);}
+/*const addToTrip = (keyelement, valueelement) => {
+  console.log(keyelement);
+  console.log(valueelement);
+}; */

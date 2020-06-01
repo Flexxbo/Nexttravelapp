@@ -9,11 +9,11 @@ import Cliententry from "./Contentfulcomplete";
 import { Circle, Marker, Popup } from "react-leaflet";
 import { useEffect, useState } from "react";
 /*===Start code here===*/
-const addToTrip = (keyelement, valueelement) => {
+/*const addToTrip = (keyelement, valueelement) => {
   console.log(keyelement);
   console.log(valueelement);
-};
-export default function Markers() {
+};*/
+export default function Markers({ addToTrip }) {
   let [data, setData] = useState([]);
   // ! Need to wait for component to load before using fetched data
 
@@ -66,3 +66,6 @@ export default function Markers() {
 // "//commented out
 // "+ Highlight: This needs to be highlited for some reason
 // "@param Explain Parameters
+/*onClick={() => {
+                  addToTrip(key, item.fields.name);
+                }} */
