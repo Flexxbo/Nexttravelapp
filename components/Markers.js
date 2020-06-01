@@ -6,10 +6,13 @@
 
 /*===Put imports here===*/
 import Cliententry from "./Contentfulcomplete";
-import { Marker, Popup } from "react-leaflet";
+import { Circle, Marker, Popup } from "react-leaflet";
 import { useEffect, useState } from "react";
 /*===Start code here===*/
-
+const addToTrip = (keyelement, valueelement) => {
+  console.log(keyelement);
+  console.log(valueelement);
+};
 export default function Markers() {
   let [data, setData] = useState([]);
   // ! Need to wait for component to load before using fetched data
@@ -27,19 +30,25 @@ export default function Markers() {
       .catch((err) => console.log("An error occured: " + err));
   }, []);
   // ! stopping the reload with []
-
+  //let = keyvar;
   return (
     // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
     <>
-      {data.map((item) => {
+      {data.map((item, index) => {
+        const key = index;
         console.log(item);
-        //<p>{JSON.stringify(item)}</p>
+        //<p>{JSON.stringify(item)}</p> /*!
         return (
-          <Marker key={Math.random()} position={item.fields.location}>
+          <Marker key={/*Math.random()*/ key} position={item.fields.location}>
             <Popup>
-              {item.fields.name}
-              <button>Button 1 - add to itinerary</button>
-              <button>Button 2 - close</button>
+              {item.fields.name} <br></br>
+              <button
+                onClick={() => {
+                  addToTrip(key, item.fields.name);
+                }}
+              >
+                Add to Trip
+              </button>
               {/* I can put a component here, for example button component */}
             </Popup>
           </Marker>

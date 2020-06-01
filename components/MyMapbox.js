@@ -21,4 +21,4 @@ export default function MyMap({ lat, lng }) {
     </Map>
   );
 }
-//
+//{/*addTo={addToTrip}*/}const addToTrip = (element) => {  console.log(element);}
