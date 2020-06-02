@@ -1,30 +1,29 @@
 /******************************************
  *  Author : Flexxbo
- *  Created On : Mon May 25 2020
- *  File : Markers.js
+ *  Created On : Tue Jun 02 2020
+ *  File : DataComponent.js
  *******************************************/
 
 /*===Put imports here===*/
 import Cliententry from "./Contentfulcomplete";
 import { useEffect, useState } from "react";
-import { Circle, Marker, Popup } from "react-leaflet";
 /*===Start code here===*/
-/*const addToTrip = (keyelement, valueelement) => {
-  console.log(keyelement);
-  console.log(valueelement);
-};*/
-export default function Markers({ addToTrip }) {
+
+export default function Markers({ logIt, setDatastate }) {
   let [data, setData] = useState([]);
   // ! Need to wait for component to load before using fetched data
-
+  /*const logIt = () => {
+    console.log("Something test");
+  };*/
   useEffect(() => {
     Cliententry.getEntries({
       // * coming from import contentful-component, that connects to API
       content_type: "destinationContent",
     })
       .then((entries) => {
-        console.log("Markers entries:", entries);
+        //console.log("Markers entries:", entries);
         setData(entries.items);
+        setDatastate(entries.items);
         // * entries is object, items is array, need array to map below
       })
       .catch((err) => console.log("An error occured: " + err));
@@ -39,19 +38,23 @@ export default function Markers({ addToTrip }) {
         //console.log("Markers item:",item);
         //<p>{JSON.stringify(item)}</p> /*!
         return (
-          <Marker key={/*Math.random()*/ key} position={item.fields.location}>
-            <Popup>
-              {item.fields.name} <br></br>
-              <button
-                onClick={() => {
-                  addToTrip(key, item.fields.name, item.fields.identifiercode);
-                }}
-              >
-                Add to Trip
-              </button>
-              {/* I can put a component here, for example button component */}
-            </Popup>
-          </Marker>
+          <div key={key}>
+            {item.fields.name} <br></br>
+            <button
+              onClick={() => {
+                logIt(
+                  data,
+                  item,
+                  key,
+                  item.fields.name,
+                  item.fields.identifiercode,
+                  item.fields.location
+                );
+              }}
+            >
+              Datafetch
+            </button>
+          </div>
         );
       })}
     </>
@@ -66,6 +69,3 @@ export default function Markers({ addToTrip }) {
 // "//commented out
 // "+ Highlight: This needs to be highlited for some reason
 // "@param Explain Parameters
-/*onClick={() => {
-                  addToTrip(key, item.fields.name);
-                }} */

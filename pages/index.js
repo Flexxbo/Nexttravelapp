@@ -9,10 +9,13 @@ import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
 import MapComponent from "../components/Dynamic";
+import DataComponent from "../components/DataComponent";
+
 //import styles from "../components/Map.module.css";
 // *The contentful imports below have to be there, though they don´t get used yet, only console.log(ged)
 import Cliententry from "../components/Contentfulcomp";
 import Clientcomplete from "../components/Contentfulcomplete";
+import { useState, useEffect } from "react";
 
 /*Start coding from here */
 
@@ -21,8 +24,20 @@ import Clientcomplete from "../components/Contentfulcomplete";
 // TODO: Check wether it is ok to have same meta tags and imports in all subpages that us the layout
 // * Topbox and Imagebox containers only for giving a visual environment for app to be integrated
 // * Mapcomponent <-- Dynamic <-- import from Mapbox.js
+/*const logIt = (data, item, key, name, identifiercode, location) => {
+  console.log("This is all data:", data);
+  console.log("This is 1item of data:", item);
+  console.log("key:", key);
+  console.log("name:", name);
+  console.log("identifiercode:", identifiercode);
+  console.log("location:", location);
+};*/
 
 const Index = () => {
+  const [datastate, setDatastate] = useState("");
+  console.log("Datacomponent is =", DataComponent);
+  console.log("datastate is =", datastate);
+  //useEffect(() => {});
   return (
     <Layout>
       <div className="pagetop">
@@ -30,7 +45,7 @@ const Index = () => {
         <p>This is where more content will go</p>
         <Topbox />
         <Imageboxcontainer />
-        {/*<MapComponent /> */}
+        <DataComponent setDatastate={(data) => setDatastate(data)} />
 
         <style jsx>{`
           .pagetop {
