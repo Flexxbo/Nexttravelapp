@@ -20,7 +20,7 @@ const about = () => {
         <p>This is where I talk about...</p>
         <Topbox />
         <Imageboxcontainer />
-        <MapComponent />
+        {/*<MapComponent /> */}
         <style jsx>{`
           .pagetop {
             text-align: center;
