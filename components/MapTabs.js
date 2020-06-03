@@ -27,65 +27,44 @@ ReactDOMServer.renderToString(...);*/
 
   //console.log("Maptabs datastate:", datastate);
   //console.log("Maptabs selectedMarker", JSON.stringify(selectedMarker));
-  let displayedData = datastate.filter(word => word.fields.name === selectedMarker)
+  let displayedData = datastate.filter(
+    (word) => word.fields.name === selectedMarker
+  );
 
   // ! Need to wait for component to load before using fetched data
-  console.log("displayedData Maptabs",displayedData);
+  console.log("displayedData Maptabs", displayedData);
+  console.log(
+    "displayedData Maptabs fields name",
+    displayedData[0].fields.name
+  );
+  console.log("displayedData Maptabs Tabone ", displayedData[0].fields.tabOne);
+  //console.log("displayedData Maptabs Tabone ", displayedData.fields.tabOne);
+
   return (
     <div className="MapTabsInner">
       <Tabs>
         <TabList>
-          <Tab>{selectedMarker}</Tab>
+          <Tab>{displayedData[0].fields.name}</Tab>
           <Tab>Sightseeing</Tab>
           <Tab>Accomodation</Tab>
           <Tab>Transport</Tab>
         </TabList>
 
         <TabPanel>
-          <h2>{selectedMarker}</h2>
-          <p>{mockdata.tabOne}</p>
+          <h2>{displayedData[0].fields.name}</h2>
+          <p>{displayedData[0].fields.tabOne}</p>
         </TabPanel>
         <TabPanel>
-          <h2>Sightseeing in {selectedMarker}</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum.ubergren, no sea takimata
-            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr, sed diam nonumy eir Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <h2>Sightseeing in {displayedData[0].fields.name}</h2>
+          <p>{displayedData[0].fields.tabTwo}</p>
         </TabPanel>
         <TabPanel>
-          <h2>Accomodation in {selectedMarker}</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit umy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-            justo duo dolores et ea rebum. Samet. Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr, sed diam nontet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <h2>Accomodation in {displayedData[0].fields.name}</h2>
+          <p>{displayedData[0].fields.tabThree}</p>
         </TabPanel>
         <TabPanel>
-          <h2>Transport in {selectedMarker}</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidu et accusam et justo duo dolores et ea
-            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-            ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy ent ut labore et dolore magna
-            aliquyam erat, sed diam voluptua. At vero eos tempor invidunt ut
-            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-            et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <h2>Transport in {displayedData[0].fields.name}</h2>
+          <p>{displayedData[0].fields.tabFour}</p>
         </TabPanel>
       </Tabs>
     </div>
