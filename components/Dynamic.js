@@ -35,7 +35,6 @@ function DynamicComponent({
           <h4 id="Sidebarheader">MapSidebar</h4>
           <div className="Sidebarscroller">
             <MapSidebar
-              triparray={triparray}
               globalTrip={globalTrip}
               remove={remove}
             />
@@ -56,7 +55,6 @@ function DynamicComponent({
         </div>
         <div id="MapItineraryOuter">
           <MapItinerary
-            triparray={triparray}
             globalTrip={globalTrip}
             addToGlobalTrip={addToGlobalTrip}
           />

@@ -8,7 +8,7 @@
 import React from "react";
 /*===Start code here===*/
 
-export default function MapSidebar({ triparray, remove, globalTrip }) {
+export default function MapSidebar({  remove, globalTrip }) {
   let tripSidebar = [];
   tripSidebar.push(globalTrip.name);
   if (tripSidebar.length >= 1) {

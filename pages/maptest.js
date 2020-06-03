@@ -49,9 +49,9 @@ const maptest = () => {
   const addToGlobalTrip = (keylement, accomodationstyle) => {
     globalTrip.map((item) => {
       if (item.key === keylement) item.accomodationstyle = accomodationstyle;
-      console.log("item.key in addToGlobalTrip", item.key);
-      console.log("keylement in addToGlobalTrip", keylement);
-      console.log("globaltrip after update", globalTrip);
+      //console.log("item.key in addToGlobalTrip", item.key);
+      //console.log("keylement in addToGlobalTrip", keylement);
+      //console.log("globaltrip after update", globalTrip);
     });
   };
 

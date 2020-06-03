@@ -25,6 +25,7 @@ export default function Markers({ addToTrip, datastate, selectMarker }) {
               selectMarker(item.fields.name);
             }}
           >
+            {item.fields.name}
             <Popup>
               {item.fields.name} <br></br>
               <button
