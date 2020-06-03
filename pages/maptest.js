@@ -56,15 +56,13 @@ const maptest = () => {
   };
 
   // +++ function to select marker and pass selection to tabs+++
-  let [selectedMarker, setSelectedMarker] = useState(["Kuba"]);
+  let [selectedMarker, setSelectedMarker] = useState("Kuba");
 
   const selectMarker = (name) => {
     setSelectedMarker(name);
-    console.log(typeof name);
-    console.log(typeof selectedMarker);
-    console.log("maptest selectedMarker", selectedMarker);
-
-    alert(name);
+   // console.log(typeof name);
+    //console.log(typeof selectedMarker);
+    //console.log("maptest selectedMarker", selectedMarker);
   };
 
   return (

@@ -12,6 +12,7 @@ import React from "react";
 export default function MapItinerary({ triparray }) {
   let mapItinerary = [];
   //console.log(typeof triparray);
+
   mapItinerary.push(triparray);
   console.log("tripsidebarlogs", mapItinerary);
   if (mapItinerary.length >= 1) {

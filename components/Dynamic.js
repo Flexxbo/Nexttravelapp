@@ -18,9 +18,17 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
 });
 
+function DynamicComponent({
+  addToTrip,
+  triparray,
+  remove,
+  datastate,
+  selectedMarker,
+  selectMarker,
+}) {
+  //console.log("Dynamic triparray:", triparray);
+  console.log("Dynamiccomponent selectedMarker", selectedMarker);
 
-function DynamicComponent({ addToTrip, triparray, remove, datastate,selectedMarker, selectMarker  }) {
-  console.log("Dynamic triparray:", triparray);
   return (
     <div className="dynamiccomponent">
       <h2 className="mapheadline">
