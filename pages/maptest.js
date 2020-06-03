@@ -63,7 +63,6 @@ const maptest = () => {
       console.log("item.key in addToGlobalTrip", item.key);
       console.log("keylement in addToGlobalTrip", keylement);
       console.log("globaltrip after update", globalTrip);
-
     });
     /*
     setGlobalTrip([...globalTrip, { accomodationstyle: accomodationstyle }]);
@@ -72,14 +71,16 @@ const maptest = () => {
 
   //+++remove function when clicked in sidebar will remove element from trip-array+++
   const remove = (indexer) => {
+    const filteredItems = globalTrip.filter(function (obj) {
+      return obj.key !== indexer;
+    }); //*slicing array by id provided through sidebar-position, creating new array of filtered items
     //console.log("something is clicking", indexer);
     // const filteredItems = trip.filter((item) => item.id !== indexer);
-    const filteredItems = trip
+    /*const filteredItems = globalTrip
       .slice(0, indexer)
-      .concat(trip.slice(indexer + 1, trip.length)); //*slicing array by id provided through sidebar-position, creating new array of filtered items
-    //console.log("maptest filteredItems", filteredItems);
+      .concat(globalTrip.slice(indexer + 1, globalTrip));*/ //console.log("maptest filteredItems", filteredItems);
     //console.log("trip:", trip);
-    setTrip(filteredItems); //* set new State of Array to filteredItems
+    setGlobalTrip(filteredItems); //* set new State of Array to filteredItems
   };
 
   // +++ function to select marker and pass selection to tabs+++

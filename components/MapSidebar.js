@@ -4,73 +4,29 @@
  *  File : MapSidebar.js
  *******************************************/
 
-import React from "react";
-
 /*===Put imports here===*/
 
+import React from "react";
+
 /*===Start code here===*/
-/*
-const [destination, addDestination] = useState([
-  "Havanna",
-  "Cienfuegos",
-  "Trinidad",
-]);
 
-return (
-    <div id="MapSidebar">
-      <h4 id="Sidebarheader">MapSidebar</h4>
-      <div className="SidebarComp">
-        <button type="button" className="close" aria-label="Close">
-          <span aria-hidden="true">&times; </span>
-        </button>
-        <p>Santiago de Cuba</p>
-      </div>
-      {putSidebar(destination)}
-    </div>
-  );
-*/
-
-let destination = [
-  "Havanna",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-  "Cienfuegos",
-  "Trinidad",
-];
-
-export default function MapSidebar({ triparray, remove }) {
+export default function MapSidebar({ triparray, remove, globalTrip }) {
   let tripSidebar = [];
   //console.log(typeof triparray);
-  tripSidebar.push(triparray);
+  tripSidebar.push(globalTrip.name);
   console.log("tripsidebarlogs", tripSidebar);
   if (tripSidebar.length >= 1) {
     //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
-    return triparray.map(function (item, i) {
+    return globalTrip.map(function (item, i) {
       console.log(" MapSidebar index", i);
       //console.log("item", item);
       let sidekey = Math.random();
       //console.log("MapSidebar items.id", item.id)
 
       return (
-        <div key={sidekey} className="SidebarComp" id={i}>
+        <div key={item.key} className="SidebarComp" id={i}>
           <button
-            onClick={() => remove(i) /*{remove}*/}
+            onClick={() => remove(item.key) /*{remove}*/}
             type="button"
             className="close"
             aria-label="Close"
@@ -78,7 +34,7 @@ export default function MapSidebar({ triparray, remove }) {
             <span aria-hidden="true">&times; </span>
           </button>
           <p>
-            {i + 1}. {item}
+            {i + 1}. {item.name}
           </p>
         </div>
       );

@@ -26,7 +26,7 @@ function DynamicComponent({
   selectedMarker,
   selectMarker,
   addToGlobalTrip,
-  globalTrip
+  globalTrip,
 }) {
   //console.log("Dynamic triparray:", triparray);
   //console.log("Dynamiccomponent selectedMarker", selectedMarker);
@@ -40,7 +40,11 @@ function DynamicComponent({
         <div className="col-2 gridcolumn">
           <h4 id="Sidebarheader">MapSidebar</h4>
           <div className="Sidebarscroller">
-            <MapSidebar triparray={triparray} remove={remove} />
+            <MapSidebar
+              triparray={triparray}
+              globalTrip={globalTrip}
+              remove={remove}
+            />
           </div>
         </div>
         <div className="col-10">
