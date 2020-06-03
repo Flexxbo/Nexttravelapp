@@ -28,6 +28,28 @@ export default function MapItinerary({ triparray }) {
           <h3>
             {i + 1}. {item}
           </h3>
+          <label className="fromtolabel" for="start"> 
+            From:{" "}
+          </label>
+          <input
+            type="date"
+            id="start"
+            name="trip-start"
+            value="2018-07-22"
+            min="2020-01-01"
+            max="2025-12-31"
+          ></input>
+          <label className="fromtolabel" for="start">
+            To:
+          </label>
+          <input
+            type="date"
+            id="start"
+            name="trip-start"
+            value="2018-07-22"
+            min="2020-01-01"
+            max="2025-12-31"
+          ></input>
           <p>
             This is where a little bit of data goes, that I get from my API,
             this data shall obviously be the one of the destination
@@ -40,32 +62,10 @@ export default function MapItinerary({ triparray }) {
   }
 }
 
-/*
-  <div key={randomkey} id={i}>
-        <h3> MapItinerary</h3>
-        <div className="ItineraryContent">
-          <h4>{item}</h4>
-          <p>
-            This is where content goes, but maybe only buttons to select more
-          </p>
-        </div>
-      </div>
-
-
-export default function MapSidebar() {
-  return destination.map(function (item, i) {
-    //console.log("index", i);
-    //console.log("item", item);
-    return (
-      <div className="SidebarComp" id={i}>
-        <button type="button" className="close" aria-label="Close">
-          <span aria-hidden="true">&times; </span>
-        </button>
-        <p>{item}</p>
-      </div>
-    );
-  });
-} */
+// TODO: Create a logic, that puts all information into an object
+// TODO: Make Itinerary Printable
+// TODO: Find out about booking or in general integration
+// TODO: Make this unfoldable: Folded --> only Destination-Name and unfold button
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

@@ -58,4 +58,15 @@
   text-align: left;
   width: 100%;
   background-color: rosybrown;
+  border: black 2px solid;
+}
+
+.fromtolabel {
+  display: block;
+  font: 1rem "Fira Sans", sans-serif;
+}
+
+input,
+.fromtolabel {
+  margin: 0.2rem 0;
 }

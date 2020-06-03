@@ -27,9 +27,10 @@ ReactDOMServer.renderToString(...);*/
 
   //console.log("Maptabs datastate:", datastate);
   //console.log("Maptabs selectedMarker", JSON.stringify(selectedMarker));
+  let displayedData = datastate.filter(word => word.fields.name === selectedMarker)
 
   // ! Need to wait for component to load before using fetched data
-  console.log(selectedMarker);
+  console.log("displayedData Maptabs",displayedData);
   return (
     <div className="MapTabsInner">
       <Tabs>
