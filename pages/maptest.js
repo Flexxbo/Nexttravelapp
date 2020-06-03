@@ -29,19 +29,46 @@ const maptest = () => {
   }, []);
 
   //console.log("datastate is =", datastate);
+  // +++ Testarray for global main Tripobject
+  let [globalTrip, setGlobalTrip] = useState([]);
 
   // +++ This UseState defines the trip-array which is base to sidebar- and itinerarycomponent+++
   let [trip, setTrip] = useState([]);
   //+++addToTrip function takes the onclik from Marker component and adds the name to the trip-array+++
-  const addToTrip = (keyelement, valueelement, identifier) => {
+  const addToTrip = (keyelement, valueelement, identifierelement) => {
     //console.log(keyelement);
     //console.log("maptest valuelement:", valueelement);
     //console.log("maptest identifier:", identifier);
     setTrip([...trip, valueelement]);
-    //console.log("maptest trip:", trip);
-    //console.log(typeof trip);
+    setGlobalTrip([
+      ...globalTrip,
+      {
+        key: keyelement,
+        name: valueelement,
+        identifier: identifierelement,
+        from: "",
+        to: "",
+        accomodationstyle: "",
+        accomodationlink: "",
+      },
+    ]);
+    console.log("maptest globaltrip:", globalTrip);
+    //console.log(typeof globalTrip);
   };
-  //console.log("maptest log trip outside of function", trip, "Outsidelog");
+  //console.log("maptest log trip outside of function", globalTrip, "Outsidelog");
+  //+++test to update an object inside the array+++
+  const addToGlobalTrip = (indexer, keylement, accomodationstyle) => {
+    globalTrip.map((item) => {
+      if (item.key === keylement) item.accomodationstyle = accomodationstyle;
+      console.log("item.key in addToGlobalTrip", item.key);
+      console.log("keylement in addToGlobalTrip", keylement);
+      console.log("globaltrip after update", globalTrip);
+
+    });
+    /*
+    setGlobalTrip([...globalTrip, { accomodationstyle: accomodationstyle }]);
+    console.log("globalTrip after updating with onClick", globalTrip);*/
+  };
 
   //+++remove function when clicked in sidebar will remove element from trip-array+++
   const remove = (indexer) => {
@@ -60,7 +87,7 @@ const maptest = () => {
 
   const selectMarker = (name) => {
     setSelectedMarker(name);
-   // console.log(typeof name);
+    // console.log(typeof name);
     //console.log(typeof selectedMarker);
     //console.log("maptest selectedMarker", selectedMarker);
   };
@@ -73,11 +100,13 @@ const maptest = () => {
         {datastate ? (
           <MapComponent
             addToTrip={addToTrip}
+            globalTrip={globalTrip}
             triparray={trip}
             remove={remove}
             datastate={datastate} //+ This element => arrowfunction filters the data for only the ones that have location
             selectedMarker={selectedMarker}
             selectMarker={selectMarker}
+            addToGlobalTrip={addToGlobalTrip}
           />
         ) : null}
 

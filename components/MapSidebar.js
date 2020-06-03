@@ -62,7 +62,7 @@ export default function MapSidebar({ triparray, remove }) {
   if (tripSidebar.length >= 1) {
     //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
     return triparray.map(function (item, i) {
-      console.log("index", i);
+      console.log(" MapSidebar index", i);
       //console.log("item", item);
       let sidekey = Math.random();
       //console.log("MapSidebar items.id", item.id)

@@ -32,12 +32,12 @@ ReactDOMServer.renderToString(...);*/
   );
 
   // ! Need to wait for component to load before using fetched data
-  console.log("displayedData Maptabs", displayedData);
-  console.log(
+  //console.log("displayedData Maptabs", displayedData);
+  /*console.log(
     "displayedData Maptabs fields name",
     displayedData[0].fields.name
-  );
-  console.log("displayedData Maptabs Tabone ", displayedData[0].fields.tabOne);
+  );*/
+  //console.log("displayedData Maptabs Tabone ", displayedData[0].fields.tabOne);
   //console.log("displayedData Maptabs Tabone ", displayedData.fields.tabOne);
 
   return (

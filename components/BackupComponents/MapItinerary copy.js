@@ -11,7 +11,7 @@ import React from "react";
 
 export default function MapItinerary({
   triparray,
-  globalTrip,
+  
   handleChangeFrom,
   handleChangeTo,
   addToGlobalTrip,
@@ -19,11 +19,11 @@ export default function MapItinerary({
   let mapItinerary = [];
   //console.log(typeof triparray);
 
-  mapItinerary.push(globalTrip);
+  mapItinerary.push(triparray);
   //console.log("tripsidebarlogs", mapItinerary);
   if (mapItinerary.length >= 1) {
     //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
-    return globalTrip.map(function (item, i) {
+    return triparray.map(function (item, i) {
       console.log("index in mapItinerary", i);
       console.log("item in mapItinerary", item);
 
@@ -32,9 +32,9 @@ export default function MapItinerary({
       //console.log("MapSidebar items.id", item.id)
       //! How do I solve, getting the data I need here, connected to the Destination Name by just using the data needed from trip array
       return (
-        <div key={item.key} className="ItineraryContent" id={i}>
+        <div key={sidekey} className="ItineraryContent" id={i}>
           <h3>
-            {i + 1}. {item.name}
+            {i + 1}. {item}
           </h3>
           <label className="fromtolabel" for="start">
             From:
@@ -62,7 +62,7 @@ export default function MapItinerary({
           ></input>
           <button
             onClick={() => {
-              addToGlobalTrip(i, item.key, "hotel");
+              addToGlobalTrip(i, "hotel");
             }}
           >
             Test

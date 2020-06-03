@@ -25,9 +25,11 @@ function DynamicComponent({
   datastate,
   selectedMarker,
   selectMarker,
+  addToGlobalTrip,
+  globalTrip
 }) {
   //console.log("Dynamic triparray:", triparray);
-  console.log("Dynamiccomponent selectedMarker", selectedMarker);
+  //console.log("Dynamiccomponent selectedMarker", selectedMarker);
 
   return (
     <div className="dynamiccomponent">
@@ -55,7 +57,11 @@ function DynamicComponent({
           <MapTabs datastate={datastate} selectedMarker={selectedMarker} />
         </div>
         <div id="MapItineraryOuter">
-          <MapItinerary triparray={triparray} />
+          <MapItinerary
+            triparray={triparray}
+            globalTrip={globalTrip}
+            addToGlobalTrip={addToGlobalTrip}
+          />
         </div>
       </div>
       <p>HOME PAGE is here!</p>
