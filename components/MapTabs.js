@@ -13,54 +13,29 @@
 /*===Put imports here===*/
 import React, { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel /*resetIdCounter*/ } from "react-tabs";
-import Cliententry from "./Contentfulcomplete";
 
 /*===Start code here===*/
-export default function MapTabs() {
+export default function MapTabs(datastate, selectedMarker) {
   /*resetIdCounter();
 ReactDOMServer.renderToString(...);*/
 
-  let [data, setData] = useState([]);
-  let [state, setState] = useState({
+  let mockdata = {
     name: "Kuba",
     tabOne:
       "Kuba Kuba Kuba Info Info Info Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-  });
+  };
+
+  console.log("Maptabs datastate:", datastate);
+  console.log("Maptabs selectedMarker", JSON.stringify(selectedMarker));
+
   // ! Need to wait for component to load before using fetched data
-
-  useEffect(() => {
-    Cliententry.getEntries({
-      // * coming from import contentful-component, that connects to API
-      content_type: "destinationContent",
-    })
-      .then((entries) => {
-        console.log("Markers entries in Maptabs:", entries);
-        setData(entries.items);
-        console.log(state);
-        console.log("Maptabs InUseEffect data:", data);
-        console.log("Maptabs InUseEffect data[0]:", data[0]);
-        console.log(
-          "Maptabs InUseEffect data[0].fields.name:",
-          data[0].fields.name
-        );
-        console.log(
-          "Maptabs InUseEffect data[0].name:",
-          JSON.stringify(data[0].name)
-        );
-
-        // * entries is object, items is array, need array to map below
-      })
-      .catch((err) => console.log("An error occured: " + err));
-  }, []);
-  console.log("Maptabs Outside of UseEffect data:", data);
-  // ! Lifecycle Problem not fetching properly
 
   return (
     <div className="MapTabsInner">
       {/*data[0].fields.name*/}
       <Tabs>
         <TabList>
-          <Tab>{state.name}</Tab>
+          <Tab>{mockdata.name}</Tab>
           <Tab>Sightseeing</Tab>
           <Tab>Accomodation</Tab>
           <Tab>Transport</Tab>
@@ -68,7 +43,7 @@ ReactDOMServer.renderToString(...);*/
 
         <TabPanel>
           <h2>Header tabOne</h2>
-          <p>{state.tabOne}</p>
+          <p>{mockdata.tabOne}</p>
         </TabPanel>
         <TabPanel>
           <h2>Header tabTwo</h2>

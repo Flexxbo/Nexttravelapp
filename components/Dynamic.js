@@ -18,7 +18,8 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
 });
 
-function DynamicComponent({ addToTrip, triparray, remove }) {
+
+function DynamicComponent({ addToTrip, triparray, remove, datastate,selectedMarker, selectMarker  }) {
   console.log("Dynamic triparray:", triparray);
   return (
     <div className="dynamiccomponent">
@@ -38,13 +39,15 @@ function DynamicComponent({ addToTrip, triparray, remove }) {
             lat={21.737731}
             lng={-79.914551}
             addToTrip={addToTrip}
+            datastate={datastate}
+            selectMarker={selectMarker}
           />
         </div>
         <div id="MapTabsOuter">
-          <MapTabs />
+          <MapTabs datastate={datastate} selectedMarker={selectedMarker} />
         </div>
         <div id="MapItineraryOuter">
-          <MapItinerary />
+          <MapItinerary triparray={triparray} />
         </div>
       </div>
       <p>HOME PAGE is here!</p>
@@ -54,14 +57,16 @@ function DynamicComponent({ addToTrip, triparray, remove }) {
 
 export default DynamicComponent;
 
-/*      <style jsx>{`
+/*    
+  <style jsx>{`
         .mapboxsize {21.737731, -79.914551
           backgroud-color: green;
           height: 300px;
           width: 300px;
           border: red 5px solid;
         }
-      `}</style>*/
+      `}</style>
+      */
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

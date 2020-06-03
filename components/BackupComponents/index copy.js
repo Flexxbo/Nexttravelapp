@@ -5,16 +5,16 @@
  *******************************************/
 
 /*Put your imports here */
-import Layout from "../components/Layout";
-import Imageboxcontainer from "../components/Imageboxcontainer";
-import Topbox from "../components/Topbox";
-//import MapComponent from "../components/Dynamic";
-//import DataComponent from "../components/DataComponent";
+import Layout from "../Layout";
+import Imageboxcontainer from "../Imageboxcontainer";
+import Topbox from "../Topbox";
+import MapComponent from "../Dynamic";
+import DataComponent from "../DataComponent";
 
 //import styles from "../components/Map.module.css";
 // *The contentful imports below have to be there, though they don´t get used yet, only console.log(ged)
-import Cliententry from "../components/Contentfulcomp";
-import Clientcomplete from "../components/Contentfulcomplete";
+import Cliententry from "../Contentfulcomp";
+import Clientcomplete from "../Contentfulcomplete";
 import { useState, useEffect } from "react";
 
 /*Start coding from here */
@@ -25,9 +25,11 @@ import { useState, useEffect } from "react";
 // * Topbox and Imagebox containers only for giving a visual environment for app to be integrated
 // * Mapcomponent <-- Dynamic <-- import from Mapbox.js
 
+
 const Index = () => {
-  //  const [datastate, setDatastate] = useState("");
-  //  console.log("datastate is =", datastate);
+  const [datastate, setDatastate] = useState("");
+  console.log("Datacomponent is =", DataComponent);
+  console.log("datastate is =", datastate);
   return (
     <Layout>
       <div className="pagetop">
@@ -35,7 +37,7 @@ const Index = () => {
         <p>This is where more content will go</p>
         <Topbox />
         <Imageboxcontainer />
-        {/*<DataComponent setDatastate={(data) => setDatastate(data)} />*/}
+        <DataComponent setDatastate={(data) => setDatastate(data)} />
 
         <style jsx>{`
           .pagetop {

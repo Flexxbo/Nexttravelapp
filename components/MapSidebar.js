@@ -70,7 +70,7 @@ export default function MapSidebar({ triparray, remove }) {
       return (
         <div key={sidekey} className="SidebarComp" id={i}>
           <button
-            onClick={()=>remove(i)/*{remove}*/}
+            onClick={() => remove(i) /*{remove}*/}
             type="button"
             className="close"
             aria-label="Close"

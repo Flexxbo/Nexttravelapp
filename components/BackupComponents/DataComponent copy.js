@@ -5,7 +5,7 @@
  *******************************************/
 
 /*===Put imports here===*/
-import Cliententry from "./Contentfulcomplete";
+import Cliententry from "../Contentfulcomplete";
 import { useEffect, useState } from "react";
 /*===Start code here===*/
 
@@ -30,7 +30,35 @@ export default function Markers({ logIt, setDatastate }) {
   }, []);
   // ! stopping the reload with []
   //let = keyvar;
-  return "";
+  return (
+    // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
+    <>
+      {data.map((item, index) => {
+        const key = index;
+        //console.log("Markers item:",item);
+        //<p>{JSON.stringify(item)}</p> /*!
+        return (
+          <div key={key}>
+            {item.fields.name} <br></br>
+            <button
+              onClick={() => {
+                logIt(
+                  data,
+                  item,
+                  key,
+                  item.fields.name,
+                  item.fields.identifiercode,
+                  item.fields.location
+                );
+              }}
+            >
+              Datafetch
+            </button>
+          </div>
+        );
+      })}
+    </>
+  );
 }
 
 /* ===Better Comments=== */

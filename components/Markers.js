@@ -13,33 +13,23 @@ import { Circle, Marker, Popup } from "react-leaflet";
   console.log(keyelement);
   console.log(valueelement);
 };*/
-export default function Markers({ addToTrip }) {
-  let [data, setData] = useState([]);
-  // ! Need to wait for component to load before using fetched data
-
-  useEffect(() => {
-    Cliententry.getEntries({
-      // * coming from import contentful-component, that connects to API
-      content_type: "destinationContent",
-    })
-      .then((entries) => {
-        console.log("Markers entries:", entries);
-        setData(entries.items);
-        // * entries is object, items is array, need array to map below
-      })
-      .catch((err) => console.log("An error occured: " + err));
-  }, []);
-  // ! stopping the reload with []
-  //let = keyvar;
+export default function Markers({ addToTrip, datastate, selectMarker }) {
+  console.log("datastate in Markers", datastate);
   return (
     // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
     <>
-      {data.map((item, index) => {
+      {datastate.map((item, index) => {
         const key = index;
         //console.log("Markers item:",item);
         //<p>{JSON.stringify(item)}</p> /*!
         return (
-          <Marker key={/*Math.random()*/ key} position={item.fields.location}>
+          <Marker
+            key={/*Math.random()*/ key}
+            position={item.fields.location}
+            onClick={() => {
+              selectMarker(item.fields.name);
+            }}
+          >
             <Popup>
               {item.fields.name} <br></br>
               <button
