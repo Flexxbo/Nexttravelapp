@@ -27,8 +27,4 @@ export default function MyMap({
     </Map>
   );
 }
-/*const addToTrip = (keyelement, valueelement) => {
-  console.log(keyelement);
-  console.log(valueelement);
-}; */
 

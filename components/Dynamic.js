@@ -5,14 +5,12 @@
  *******************************************/
 
 /*===Put imports here===*/
-
-/*===Start code here===*/
-
 import dynamic from "next/dynamic";
 import styles from "./Map.module.css";
 import MapSidebar from "./MapSidebar";
 import MapTabs from "./MapTabs";
 import MapItinerary from "./MapItinerary";
+/*===Start code here===*/
 
 const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
@@ -20,7 +18,6 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
 
 function DynamicComponent({
   addToTrip,
-  triparray,
   remove,
   datastate,
   selectedMarker,
@@ -28,9 +25,6 @@ function DynamicComponent({
   addToGlobalTrip,
   globalTrip,
 }) {
-  //console.log("Dynamic triparray:", triparray);
-  //console.log("Dynamiccomponent selectedMarker", selectedMarker);
-
   return (
     <div className="dynamiccomponent">
       <h2 className="mapheadline">
@@ -74,17 +68,6 @@ function DynamicComponent({
 }
 
 export default DynamicComponent;
-
-/*    
-  <style jsx>{`
-        .mapboxsize {21.737731, -79.914551
-          backgroud-color: green;
-          height: 300px;
-          width: 300px;
-          border: red 5px solid;
-        }
-      `}</style>
-      */
 
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task

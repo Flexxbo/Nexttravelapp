@@ -6,11 +6,9 @@
 
 /*===Put imports here===*/
 import React from "react";
-
 /*===Start code here===*/
 
 export default function MapItinerary({
-  triparray,
   globalTrip,
   handleChangeFrom,
   handleChangeTo,
@@ -62,7 +60,7 @@ export default function MapItinerary({
           ></input>
           <button
             onClick={() => {
-              addToGlobalTrip(i, item.key, "hotel");
+              addToGlobalTrip(item.key, "hotel");
             }}
           >
             Test
