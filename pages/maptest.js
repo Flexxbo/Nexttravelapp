@@ -54,6 +54,15 @@ const maptest = () => {
       //console.log("globaltrip after update", globalTrip);
     });
   };
+  //+++update an object inside the array with data from Itinerary+++
+  const addFromDateToGlobalTrip = (keylement, date) => {
+    globalTrip.map((item) => {
+      if (item.key === keylement) item.from = date;
+      console.log("item.key in addToGlobalTrip", item.key);
+      console.log("keylement in addToGlobalTrip", keylement);
+      console.log("globaltrip after update", globalTrip);
+    });
+  };
 
   //+++remove function when clicked in sidebar will remove element from trip-array+++
   const remove = (indexer) => {
@@ -77,13 +86,14 @@ const maptest = () => {
         <p>This is where I test Map</p>
         {datastate ? (
           <MapComponent
-            addToTrip={addToTrip}
+            addToTrip={addToTrip} //!Achtung behalten!
             globalTrip={globalTrip}
             remove={remove}
             datastate={datastate} //+ This element => arrowfunction filters the data for only the ones that have location
             selectedMarker={selectedMarker}
             selectMarker={selectMarker}
             addToGlobalTrip={addToGlobalTrip}
+            addFromDateToGlobalTrip={addFromDateToGlobalTrip}
           />
         ) : null}
 

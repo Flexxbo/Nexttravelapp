@@ -24,6 +24,7 @@ function DynamicComponent({
   selectMarker,
   addToGlobalTrip,
   globalTrip,
+  addFromDateToGlobalTrip,
 }) {
   return (
     <div className="dynamiccomponent">
@@ -34,10 +35,7 @@ function DynamicComponent({
         <div className="col-2 gridcolumn">
           <h4 id="Sidebarheader">MapSidebar</h4>
           <div className="Sidebarscroller">
-            <MapSidebar
-              globalTrip={globalTrip}
-              remove={remove}
-            />
+            <MapSidebar globalTrip={globalTrip} remove={remove} />
           </div>
         </div>
         <div className="col-10">
@@ -57,6 +55,7 @@ function DynamicComponent({
           <MapItinerary
             globalTrip={globalTrip}
             addToGlobalTrip={addToGlobalTrip}
+            addFromDateToGlobalTrip={addFromDateToGlobalTrip}
           />
         </div>
       </div>

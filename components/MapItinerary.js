@@ -5,18 +5,36 @@
  *******************************************/
 
 /*===Put imports here===*/
-import React from "react";
+import React, { useState } from "react";
+import ReactDatePicker from "react-datepicker";
+import { useForm, Controller } from "react-hook-form";
+import Datepicker from "./Datepicker";
+//import "react-datepicker/dist/react-datepicker.css";
+
 /*===Start code here===*/
+
+const defaultValues = {
+  Native: "",
+  TextField: "",
+  Select: "",
+  ReactSelect: { value: "vanilla", label: "Vanilla" },
+  Checkbox: false,
+  switch: false,
+  RadioGroup: "",
+  numberFormat: 123456789,
+  downShift: "apple",
+};
 
 export default function MapItinerary({
   globalTrip,
   handleChangeFrom,
   handleChangeTo,
   addToGlobalTrip,
+  addFromDateToGlobalTrip,
 }) {
   let mapItinerary = [];
-  //console.log(typeof triparray);
-
+  const { handleSubmit, register, reset, control } = useForm({ defaultValues });
+  const [data, setData] = useState(null);
   mapItinerary.push(globalTrip);
   //console.log("tripsidebarlogs", mapItinerary);
   if (mapItinerary.length >= 1) {
@@ -25,39 +43,12 @@ export default function MapItinerary({
       console.log("index in mapItinerary", i);
       console.log("item in mapItinerary", item);
 
-      //console.log("item", item);
-      let sidekey = Math.random();
-      //console.log("MapSidebar items.id", item.id)
       //! How do I solve, getting the data I need here, connected to the Destination Name by just using the data needed from trip array
       return (
         <div key={item.key} className="ItineraryContent" id={i}>
           <h3>
             {i + 1}. {item.name}
           </h3>
-          <label className="fromtolabel" for="start">
-            From:
-          </label>
-          <input
-            onChange={handleChangeFrom}
-            type="date"
-            id="start"
-            name="trip-start"
-            value="2018-07-22"
-            min="2020-01-01"
-            max="2025-12-31"
-          ></input>
-          <label className="fromtolabel" for="start">
-            To:
-          </label>
-          <input
-            onChange={handleChangeTo}
-            type="date"
-            id="start"
-            name="trip-start"
-            value="2018-07-22"
-            min="2020-01-01"
-            max="2025-12-31"
-          ></input>
           <button
             onClick={() => {
               addToGlobalTrip(item.key, "hotel");
@@ -65,6 +56,10 @@ export default function MapItinerary({
           >
             Test
           </button>
+          <Datepicker
+            keyelement={item.key}
+            addFromDateToGlobalTrip={addFromDateToGlobalTrip}
+          />
         </div>
       );
     });
@@ -86,3 +81,14 @@ export default function MapItinerary({
 // "//commented out
 // "+ Highlight: This needs to be highlited for some reason
 // "@param Explain Parameters
+/*
+    <Controller
+            as={ReactDatePicker}
+            control={control}
+            valueName="selected" // DateSelect value's name is selected
+            onChange={([selected]) => selected}
+            name="ReactDatepicker"
+            className="input"
+            placeholderText="Select date"
+          />
+*/

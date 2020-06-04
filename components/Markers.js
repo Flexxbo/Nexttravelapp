@@ -22,10 +22,9 @@ export default function Markers({ addToTrip, datastate, selectMarker }) {
             key={key}
             position={item.fields.location}
             onClick={() => {
-              selectMarker(item.fields.name);
+            selectMarker(item.fields.name);
             }}
           >
-            {item.fields.name}
             <Popup>
               {item.fields.name} <br></br>
               <button
