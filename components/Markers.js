@@ -14,28 +14,34 @@ export default function Markers({ addToTrip, datastate, selectMarker }) {
   console.log("datastate in Markers", datastate);
   return (
     // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
+    //+++Needed to wrap marker in Span because marker does not accept onclick
     <>
       {datastate.map((item) => {
         const key = Math.random();
         return (
-          <Marker
+          <span
             key={key}
-            position={item.fields.location}
             onClick={() => {
-            selectMarker(item.fields.name);
+              selectMarker(item.fields.name);
             }}
           >
-            <Popup>
-              {item.fields.name} <br></br>
-              <button
-                onClick={() => {
-                  addToTrip(key, item.fields.name, item.fields.identifiercode);
-                }}
-              >
-                Add to Trip
-              </button>
-            </Popup>
-          </Marker>
+            <Marker key={key} position={item.fields.location}>
+              <Popup>
+                {item.fields.name} <br></br>
+                <button
+                  onClick={() => {
+                    addToTrip(
+                      key,
+                      item.fields.name,
+                      item.fields.identifiercode
+                    );
+                  }}
+                >
+                  Add to Trip
+                </button>
+              </Popup>
+            </Marker>
+          </span>
         );
       })}
     </>
