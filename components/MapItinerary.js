@@ -13,17 +13,7 @@ import Datepicker from "./Datepicker";
 
 /*===Start code here===*/
 
-const defaultValues = {
-  Native: "",
-  TextField: "",
-  Select: "",
-  ReactSelect: { value: "vanilla", label: "Vanilla" },
-  Checkbox: false,
-  switch: false,
-  RadioGroup: "",
-  numberFormat: 123456789,
-  downShift: "apple",
-};
+
 
 export default function MapItinerary({
   globalTrip,
@@ -31,10 +21,9 @@ export default function MapItinerary({
   handleChangeTo,
   addToGlobalTrip,
   addFromDateToGlobalTrip,
+  addToDateToGlobalTrip,
 }) {
   let mapItinerary = [];
-  const { handleSubmit, register, reset, control } = useForm({ defaultValues });
-  const [data, setData] = useState(null);
   mapItinerary.push(globalTrip);
   //console.log("tripsidebarlogs", mapItinerary);
   if (mapItinerary.length >= 1) {
@@ -59,6 +48,10 @@ export default function MapItinerary({
           <Datepicker
             keyelement={item.key}
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
+          />
+          <Datepicker
+            keyelement={item.key}
+            addToDateToGlobalTrip={addToDateToGlobalTrip}
           />
         </div>
       );

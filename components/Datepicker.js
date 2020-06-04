@@ -9,15 +9,24 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 /*===Start code here===*/
 
-export default function Datepicker({ keyelement, addFromDateToGlobalTrip }) {
+export default function Datepicker({
+  keyelement,
+  addFromDateToGlobalTrip,
+  addToDateToGlobalTrip,
+}) {
   const [startDate, setStartDate] = useState(new Date());
   return (
     <DatePicker
       selected={startDate}
-      dateFormat="dd.MM.yyyy "
+      dateFormat="dd.MM.yyyy"
       onChange={(date) => {
         setStartDate(date);
-        addFromDateToGlobalTrip(keyelement, date);
+        if (addFromDateToGlobalTrip) {
+          addFromDateToGlobalTrip(keyelement, date);
+        } else {
+          addToDateToGlobalTrip(keyelement, date);
+        }
+
         console.log("date from Datepicker", date);
         console.log(typeof date);
       }}

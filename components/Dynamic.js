@@ -25,6 +25,7 @@ function DynamicComponent({
   addToGlobalTrip,
   globalTrip,
   addFromDateToGlobalTrip,
+  addToDateToGlobalTrip,
 }) {
   return (
     <div className="dynamiccomponent">
@@ -56,6 +57,7 @@ function DynamicComponent({
             globalTrip={globalTrip}
             addToGlobalTrip={addToGlobalTrip}
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
+            addToDateToGlobalTrip={addToDateToGlobalTrip}
           />
         </div>
       </div>

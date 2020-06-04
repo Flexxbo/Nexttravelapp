@@ -63,7 +63,15 @@ const maptest = () => {
       console.log("globaltrip after update", globalTrip);
     });
   };
-
+  //+++update an object inside the array with data from Itinerary+++
+  const addToDateToGlobalTrip = (keylement, date) => {
+    globalTrip.map((item) => {
+      if (item.key === keylement) item.to = date;
+      console.log("item.key in addToGlobalTrip", item.key);
+      console.log("keylement in addToGlobalTrip", keylement);
+      console.log("globaltrip after update", globalTrip);
+    });
+  };
   //+++remove function when clicked in sidebar will remove element from trip-array+++
   const remove = (indexer) => {
     const filteredItems = globalTrip.filter(function (obj) {
@@ -94,6 +102,7 @@ const maptest = () => {
             selectMarker={selectMarker}
             addToGlobalTrip={addToGlobalTrip}
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
+            addToDateToGlobalTrip={addToDateToGlobalTrip}
           />
         ) : null}
 
