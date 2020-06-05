@@ -13,12 +13,8 @@ import Datepicker from "./Datepicker";
 
 /*===Start code here===*/
 
-
-
 export default function MapItinerary({
   globalTrip,
-  handleChangeFrom,
-  handleChangeTo,
   addToGlobalTrip,
   addFromDateToGlobalTrip,
   addToDateToGlobalTrip,
@@ -29,8 +25,8 @@ export default function MapItinerary({
   if (mapItinerary.length >= 1) {
     //!Attention complicated, but had to do this workaround because sidebar returned empty element if array was empty
     return globalTrip.map(function (item, i) {
-      console.log("index in mapItinerary", i);
-      console.log("item in mapItinerary", item);
+      //console.log("index in mapItinerary", i);
+      //console.log("item in mapItinerary", item);
 
       //! How do I solve, getting the data I need here, connected to the Destination Name by just using the data needed from trip array
       return (
@@ -74,14 +70,4 @@ export default function MapItinerary({
 // "//commented out
 // "+ Highlight: This needs to be highlited for some reason
 // "@param Explain Parameters
-/*
-    <Controller
-            as={ReactDatePicker}
-            control={control}
-            valueName="selected" // DateSelect value's name is selected
-            onChange={([selected]) => selected}
-            name="ReactDatepicker"
-            className="input"
-            placeholderText="Select date"
-          />
-*/
+

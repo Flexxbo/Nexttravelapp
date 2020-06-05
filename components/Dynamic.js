@@ -10,9 +10,15 @@ import styles from "./Map.module.css";
 import MapSidebar from "./MapSidebar";
 import MapTabs from "./MapTabs";
 import MapItinerary from "./MapItinerary";
+//import CreatePDF from "./CreatePDF";
+
 /*===Start code here===*/
 
 const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
+  ssr: false,
+});
+
+const DynamicComponentWithNoSSR2 = dynamic(() => import("./CreatePDF"), {
   ssr: false,
 });
 
@@ -59,6 +65,7 @@ function DynamicComponent({
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
             addToDateToGlobalTrip={addToDateToGlobalTrip}
           />
+          <DynamicComponentWithNoSSR2 globalTrip={globalTrip} />
         </div>
       </div>
       <p>HOME PAGE is here!</p>
