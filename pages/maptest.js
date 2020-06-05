@@ -38,7 +38,9 @@ const maptest = () => {
         name: valueelement,
         identifier: identifierelement,
         from: "",
+        fromDeutsch: "",
         to: "",
+        toDeutsch: "",
         accomodationstyle: "",
         accomodationlink: "",
       },
@@ -57,7 +59,11 @@ const maptest = () => {
   //+++update an object inside the array with data from Itinerary+++
   const addFromDateToGlobalTrip = (keylement, date) => {
     globalTrip.map((item) => {
-      if (item.key === keylement) item.from = date;
+      let dateDeutsch = date.toLocaleDateString();
+      if (item.key === keylement) {
+        item.from = date;
+        item.fromDeutsch = dateDeutsch;
+      }
       console.log("item.key in addToGlobalTrip", item.key);
       console.log("keylement in addToGlobalTrip", keylement);
       console.log("globaltrip after update", globalTrip);
@@ -66,7 +72,13 @@ const maptest = () => {
   //+++update an object inside the array with data from Itinerary+++
   const addToDateToGlobalTrip = (keylement, date) => {
     globalTrip.map((item) => {
-      if (item.key === keylement) item.to = date;
+      let dateDeutsch = date.toLocaleDateString();
+      console.log("dateDeutsch", dateDeutsch);
+      if (item.key === keylement) {
+        item.to = date;
+        item.toDeutsch = dateDeutsch;
+      }
+
       console.log("item.key in addToGlobalTrip", item.key);
       console.log("keylement in addToGlobalTrip", keylement);
       console.log("globaltrip after update", globalTrip);

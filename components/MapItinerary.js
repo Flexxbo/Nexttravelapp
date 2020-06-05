@@ -44,9 +44,6 @@ export default function MapItinerary({
           <Datepicker
             keyelement={item.key}
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
-          />
-          <Datepicker
-            keyelement={item.key}
             addToDateToGlobalTrip={addToDateToGlobalTrip}
           />
         </div>
@@ -70,4 +67,3 @@ export default function MapItinerary({
 // "//commented out
 // "+ Highlight: This needs to be highlited for some reason
 // "@param Explain Parameters
-

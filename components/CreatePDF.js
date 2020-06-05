@@ -10,11 +10,20 @@ import jsPDF from "jspdf";
 /*===Start code here===*/
 
 const createPDF = (globalTrip) => {
-  var doc = new jsPDF("p", "pt");
+  var doc = new jsPDF();
   //let dataPDF = globalTrip.globalTrip;
-  console.log(typeof globalTrip.globalTrip[0]);
-  doc.text(20, 20, "1. "+ globalTrip.globalTrip[0].name);
-  console.log(globalTrip.globalTrip[0].name);
+  globalTrip.globalTrip.map((item, i) => {
+    console.log("Das ist das Printitem", item);
+    return (
+      doc.text(20, i * 20 + 20, i + 1 + "." + item.name),
+      doc.text(120, i * 20 + 20, "from: " + item.fromDeutsch),
+      doc.text(160, i * 20 + 20, "to: " + item.toDeutsch)
+    );
+  });
+  /*doc.text(20, 20, "1. " + globalTrip.globalTrip[0].name);
+  doc.text(20, 30, "from: " + globalTrip.globalTrip[0].fromDeutsch);
+  doc.text(80, 30, "from: " + globalTrip.globalTrip[0].toDeutsch);
+*/
   doc.save("generated.pdf");
 };
 

@@ -15,33 +15,22 @@ export default function Datepicker({
   addToDateToGlobalTrip,
 }) {
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
   return (
-    <>
-      <DatePicker
-        selected={startDate}
-        dateFormat="dd.MM.yyyy"
-        onChange={(date) => {
-          setStartDate(date);
+    <DatePicker
+      selected={startDate}
+      dateFormat="dd.MM.yyyy"
+      onChange={(date) => {
+        setStartDate(date);
+        if (addFromDateToGlobalTrip) {
           addFromDateToGlobalTrip(keyelement, date);
-        }}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-      />
-      <DatePicker
-        selected={endDate}
-        dateFormat="dd.MM.yyyy"
-        onChange={(date) => {
-          setEndDate(date);
+        } else {
           addToDateToGlobalTrip(keyelement, date);
-        }}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-      />
-    </>
+        }
+
+        console.log("date from Datepicker", date);
+        console.log(typeof date);
+      }}
+    />
   );
 }
 
