@@ -29,8 +29,18 @@ const maptest = () => {
   // +++ This UseState defines the trip-array which is base to sidebar- and itinerarycomponent+++
   let [globalTrip, setGlobalTrip] = useState([]);
 
+  // +++ This UseState defines the polyline-array+++
+  let [poly, setPoly] = useState([]);
+
   // +++addToTrip function takes the onclick from Marker component and adds the name to the trip-array+++
-  const addToTrip = (keyelement, valueelement, identifierelement) => {
+  const addToTrip = (
+    keyelement,
+    valueelement,
+    identifierelement,
+    lat,
+    lon,
+    location
+  ) => {
     setGlobalTrip([
       ...globalTrip,
       {
@@ -43,8 +53,12 @@ const maptest = () => {
         toDeutsch: "",
         accomodationstyle: "",
         accomodationlink: "",
+        lat: lat,
+        lon: lon,
+        position: location,
       },
     ]);
+    setPoly([...poly, { lat: lat, lon: lon }]);
   };
 
   //+++update an object inside the array with data from Itinerary+++
@@ -85,10 +99,16 @@ const maptest = () => {
     });
   };
   //+++remove function when clicked in sidebar will remove element from trip-array+++
-  const remove = (indexer) => {
+  const remove = (indexer, i) => {
     const filteredItems = globalTrip.filter(function (obj) {
       return obj.key !== indexer;
     });
+    const filteredPoly = poly.filter(function (obj, index) {
+      console.log("obj.index", index);
+      return index !== i;
+    });
+    console.log("filteredpoly", filteredPoly);
+    setPoly(filteredPoly);
     setGlobalTrip(filteredItems); //* set new State of Array to filteredItems
   };
 
@@ -115,6 +135,7 @@ const maptest = () => {
             addToGlobalTrip={addToGlobalTrip}
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
             addToDateToGlobalTrip={addToDateToGlobalTrip}
+            poly={poly}
           />
         ) : null}
 

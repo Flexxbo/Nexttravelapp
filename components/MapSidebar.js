@@ -17,7 +17,7 @@ export default function MapSidebar({  remove, globalTrip }) {
       return (
         <div key={item.key} className="SidebarComp" id={i}>
           <button
-            onClick={() => remove(item.key)}
+            onClick={() => remove(item.key, i)}
             type="button"
             className="close"
             aria-label="Close"

@@ -5,9 +5,10 @@
  *******************************************/
 
 import React from "react";
-import { Map, TileLayer } from "react-leaflet";
+import { Map, TileLayer, CircleMarker, Circle, Polyline } from "react-leaflet";
 import styles from "./Map.module.css";
 import Markers from "./Markers.js";
+import Polyline2 from "./Polyline.js";
 
 export default function MyMap({
   lat,
@@ -15,6 +16,7 @@ export default function MyMap({
   addToTrip,
   datastate,
   selectMarker,
+  poly,
 }) {
   return (
     <Map className={styles.mapid} center={[lat, lng]} zoom={7}>
@@ -23,8 +25,12 @@ export default function MyMap({
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Markers addToTrip={addToTrip} datastate={datastate.filter((element) => element.fields.location)}  selectMarker={selectMarker} />
+      <Markers
+        addToTrip={addToTrip}
+        datastate={datastate.filter((element) => element.fields.location)}
+        selectMarker={selectMarker}
+      />
+      <Polyline2 poly={poly} />
     </Map>
   );
 }
-

@@ -7,7 +7,7 @@
 /*===Put imports here===*/
 import Cliententry from "./Contentfulcomplete";
 import { useEffect, useState } from "react";
-import { Circle, Marker, Popup, Tooltip } from "react-leaflet";
+import { Circle, CircleMarker, Marker, Popup, Tooltip } from "react-leaflet";
 /*===Start code here===*/
 
 export default function Markers({ addToTrip, datastate, selectMarker }) {
@@ -33,19 +33,17 @@ export default function Markers({ addToTrip, datastate, selectMarker }) {
                     addToTrip(
                       key,
                       item.fields.name,
-                      item.fields.identifiercode
+                      item.fields.identifiercode,
+                      item.fields.location.lat,
+                      item.fields.location.lon,
+                      item.fields.location
                     );
                   }}
                 >
                   Add to Trip
                 </button>
               </Popup>
-              <Tooltip
-                direction="top"
-                offset={[-0, -0]}
-                opacity={1}
-                permanent
-              >
+              <Tooltip direction="top" offset={[-0, -0]} opacity={1} permanent>
                 <span>{item.fields.name}</span>
               </Tooltip>
             </Marker>

@@ -32,6 +32,7 @@ function DynamicComponent({
   globalTrip,
   addFromDateToGlobalTrip,
   addToDateToGlobalTrip,
+  poly,
 }) {
   return (
     <div className="dynamiccomponent">
@@ -53,6 +54,7 @@ function DynamicComponent({
             addToTrip={addToTrip}
             datastate={datastate}
             selectMarker={selectMarker}
+            poly={poly}
           />
         </div>
         <div id="MapTabsOuter">
