@@ -10,30 +10,36 @@ import Link from "next/link";
 
 /*===Start code here===*/
 const Navbar = () => (
-  <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
-    <div className="container">
-      <a className="navbar-brand" href="#">
-        Kuba Reisen und Planer
-      </a>
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link href="/">
-              <a className="nav-link">Home</a>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/about">
-              <a className="nav-link">About</a>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/maptest">
-              <a className="nav-link">Maptest</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
+  <nav className="navbar navbar-expand-md bg-light navbar-light fixed-top">
+    <a className="navbar-brand" href="#">
+      Kuba Reisen und Planer
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link href="/">
+            <a className="nav-link">Home</a>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link href="/about">
+            <a className="nav-link">About</a>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link href="/maptest">
+            <a className="nav-link">Maptest</a>
+          </Link>
+        </li>
+      </ul>
     </div>
   </nav>
 );

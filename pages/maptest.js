@@ -117,6 +117,7 @@ const maptest = () => {
 
   const selectMarker = (name) => {
     setSelectedMarker(name);
+    console.log(selectedMarker);
   };
 
   return (
@@ -138,13 +139,6 @@ const maptest = () => {
             poly={poly}
           />
         ) : null}
-
-        <style jsx>{`
-          .pagetop {
-            text-align: center;
-            border: 1px black solid;
-          }
-        `}</style>
       </div>
     </Layout>
   );

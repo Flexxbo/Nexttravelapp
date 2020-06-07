@@ -30,19 +30,13 @@ const Index = () => {
   //  console.log("datastate is =", datastate);
   return (
     <Layout>
+      <div className="backgroundimage"></div>
       <div className="pagetop">
         <h1>Hello this is index.js</h1>
         <p>This is where more content will go</p>
         <Topbox />
         <Imageboxcontainer />
-        {/*<DataComponent setDatastate={(data) => setDatastate(data)} />*/}
-
-        <style jsx>{`
-          .pagetop {
-            text-align: center;
-            border: 1px black solid;
-          }
-        `}</style>
+       
       </div>
     </Layout>
   );

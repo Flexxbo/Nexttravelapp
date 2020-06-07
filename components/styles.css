@@ -4,6 +4,22 @@
 *  File : Map.module.css
 *******************************************/
 
+.maincontainer {
+  margin-left: 0vw;
+  margin-right: 0vw;
+}
+.backgroundimage {
+  background-image: url("https://cubapureprivatetours.com/wp-content/uploads/2018/08/Arquitectura-Colonial-de-Trinidad-Sancti-Spiritus-Cuba.jpg");
+  /*background-image: url("`${require("./oldtimer.jpg")}`");*/
+
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /*+ TAGS +*/
 
 /*+ .CLASSES +*/
@@ -76,4 +92,14 @@
 input,
 .fromtolabel {
   margin: 0.2rem 0;
+}
+.spanclass {
+  display: inline-block;
+  background-color: chartreuse;
+  width: 20px;
+  height: 20px;
+}
+.pagetop {
+  text-align: center;
+  border: 1px black solid;
 }

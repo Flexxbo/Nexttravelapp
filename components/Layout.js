@@ -16,12 +16,14 @@ import Footerbar from "./Footerbar";
 // * in props.children, there will be the content of the ./pages inserted
 
 const Layout = (props) => (
-  <div className="container">
+  <div className="c1ontainer">
     <Head>
       <title>Reise nach Kuba</title>
       <link
         rel="stylesheet"
-        href="https://bootswatch.com/4/cerulean/bootstrap.min.css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
       ></link>
       <link
         rel="stylesheet"
@@ -37,14 +39,9 @@ const Layout = (props) => (
     </Head>
 
     <Navbar />
-    {props.children}
+    <div className="maincontainer"> {props.children}</div>
+
     <Footerbar />
-    <style jsx>{`
-      .layout {
-        margin-left: 10vw;
-        margin-right: 10vw;
-      }
-    `}</style>
   </div>
 );
 
