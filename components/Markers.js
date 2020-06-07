@@ -45,7 +45,7 @@ export default function Markers({ addToTrip, datastate, selectMarker }) {
                   Add to Trip
                 </button>
               </Popup>
-              <Tooltip direction="top" offset={[-0, -0]} opacity={1} permanent>
+              <Tooltip direction="bottom" offset={[-0, -0]} opacity={1} permanent>
                 <span>{item.fields.name}</span>
               </Tooltip>
             </Marker>

@@ -6,21 +6,23 @@
 
 /*===Put imports here===*/
 import Link from "next/link";
+//! HOW TO IMPORT IMAGES ???
+//import img from "../img/Flag_of_Cuba.png";
 //import styles from "./Navbar.module.css";
 
 /*===Start code here===*/
 const Navbar = () => (
   <nav className="navbar navbar-expand-md bg-light navbar-light fixed-top">
-    <a className="navbar-brand" href="#">
-      Kuba Reisen und Planer
+    <a className="navbar-brand" href="/">
+      {/*<img src={img} alt="Logo"></img>*/}Kuba Reisen und Planer
     </a>
     <button
-      class="navbar-toggler"
+      className="navbar-toggler"
       type="button"
       data-toggle="collapse"
       data-target="#collapsibleNavbar"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="collapsibleNavbar">
       <ul className="navbar-nav ml-auto">

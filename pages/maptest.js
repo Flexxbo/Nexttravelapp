@@ -123,8 +123,7 @@ const maptest = () => {
   return (
     <Layout>
       <div className="pagetop">
-        <h1>Maptest</h1>
-        <p>This is where I test Map</p>
+
         {datastate ? (
           <MapComponent
             addToTrip={addToTrip} //!Achtung behalten!

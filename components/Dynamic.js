@@ -35,17 +35,15 @@ function DynamicComponent({
 }) {
   return (
     <div className="dynamiccomponent">
-      <h2 className="mapheadline">
-        Here is the Dynamic Map component, rendered Clientside
-      </h2>
+      <h2 className="mapheadline">Travel-Planner Cuba </h2>
       <div className="row gridrow">
         <div className="col-2 gridcolumn">
-          <h4 id="Sidebarheader">MapSidebar</h4>
+          <h4 id="Sidebarheader">Your Trip</h4>
           <div className="Sidebarscroller">
             <MapSidebar globalTrip={globalTrip} remove={remove} />
           </div>
         </div>
-        <div className="col-10">
+        <div className="col-10 gridcolumn">
           <DynamicComponentWithNoSSR
             className="mapid"
             lat={21.737731}
@@ -55,18 +53,20 @@ function DynamicComponent({
             selectMarker={selectMarker}
             poly={poly}
           />
-        </div>
-        <div id="MapTabsOuter">
-          <MapTabs datastate={datastate} selectedMarker={selectedMarker} />
-        </div>
-        <div id="MapItineraryOuter">
-          <MapItinerary
-            globalTrip={globalTrip}
-            addToGlobalTrip={addToGlobalTrip}
-            addFromDateToGlobalTrip={addFromDateToGlobalTrip}
-            addToDateToGlobalTrip={addToDateToGlobalTrip}
-          />
-          <DynamicComponentWithNoSSR2 globalTrip={globalTrip} />
+          <div className="MapTabsOuter">
+            <MapTabs datastate={datastate} selectedMarker={selectedMarker} />
+          </div>
+          <h3 className="itineraryheader">Your Itinerary</h3>
+
+          <div id="MapItineraryOuter">
+            <MapItinerary
+              globalTrip={globalTrip}
+              addToGlobalTrip={addToGlobalTrip}
+              addFromDateToGlobalTrip={addFromDateToGlobalTrip}
+              addToDateToGlobalTrip={addToDateToGlobalTrip}
+            />
+            <DynamicComponentWithNoSSR2 globalTrip={globalTrip} />
+          </div>
         </div>
       </div>
       <p>HOME PAGE is here!</p>

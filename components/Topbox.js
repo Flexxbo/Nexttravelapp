@@ -16,7 +16,7 @@ const Topbox = () => {
 
       <style jsx>{`
         .topbox {
-          background-image: url("https://cubapureprivatetours.com/wp-content/uploads/2018/08/Arquitectura-Colonial-de-Trinidad-Sancti-Spiritus-Cuba.jpg");
+          background-image: url("https://cdn.pixabay.com/photo/2015/12/28/10/19/hotel-1111199__340.jpg");
           display: flex-box;
           justify-content: center;
           border: 1px black solid;

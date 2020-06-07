@@ -6,16 +6,6 @@
 
 /*Put your imports here */
 import Layout from "../components/Layout";
-import Imageboxcontainer from "../components/Imageboxcontainer";
-import Topbox from "../components/Topbox";
-//import MapComponent from "../components/Dynamic";
-//import DataComponent from "../components/DataComponent";
-
-//import styles from "../components/Map.module.css";
-// *The contentful imports below have to be there, though they don´t get used yet, only console.log(ged)
-import Cliententry from "../components/Contentfulcomp";
-import Clientcomplete from "../components/Contentfulcomplete";
-import { useState, useEffect } from "react";
 
 /*Start coding from here */
 
@@ -30,13 +20,19 @@ const Index = () => {
   //  console.log("datastate is =", datastate);
   return (
     <Layout>
-      <div className="backgroundimage"></div>
-      <div className="pagetop">
-        <h1>Hello this is index.js</h1>
-        <p>This is where more content will go</p>
-        <Topbox />
-        <Imageboxcontainer />
-       
+      <div className="backgroundimage">
+        <div>
+          <h2>Plan your next trip now!</h2>
+          <a href="/maptest">
+            <button
+              type="button"
+              className="buttonclass"
+              className="btn btn-danger"
+            >
+              Travel-Planner
+            </button>
+          </a>
+        </div>
       </div>
     </Layout>
   );
