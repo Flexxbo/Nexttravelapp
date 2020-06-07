@@ -6,12 +6,7 @@
 
 /* ! READ BOTTOM FOR CSS BEST PREACTICES ! */
 
-.mapid {
-  display: flex;
-  width: 100%;
-  height: 70vh;
-  border: olive 5px solid;
-}
+
 
 /*
 .leaflet-container {

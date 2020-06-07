@@ -6,7 +6,6 @@
 
 import React from "react";
 import { Map, TileLayer, CircleMarker, Circle, Polyline } from "react-leaflet";
-import styles from "./Map.module.css";
 import Markers from "./Markers.js";
 import Polyline2 from "./Polyline.js";
 
@@ -19,9 +18,9 @@ export default function MyMap({
   poly,
 }) {
   return (
-    <Map className={styles.mapid} center={[lat, lng]} zoom={7}>
+    <Map className="mapid" center={[lat, lng]} zoom={7}>
       <TileLayer
-        className={styles.mapid}
+        className="mapid"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />

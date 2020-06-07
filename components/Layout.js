@@ -36,7 +36,6 @@ const Layout = (props) => (
       ></script>
     </Head>
 
-    <Debugtest />
     <Navbar />
     {props.children}
     <Footerbar />
