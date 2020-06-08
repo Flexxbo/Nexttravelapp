@@ -17,7 +17,7 @@ const DynamicComponentWithNoSSR = dynamic(() => import("./MyMapbox"), {
   ssr: false,
 });
 
-const DynamicComponentWithNoSSR2 = dynamic(() => import("./CreatePDF"), {
+const DynamicComponentWithNoSSR2 = dynamic(() => import("./CreatePDF2"), {
   ssr: false,
 });
 

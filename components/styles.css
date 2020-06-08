@@ -51,8 +51,7 @@
   height: 5vh;
 }
 
-.gridcolumn {
-}
+
 .SidebarComp {
   border: black 1px dotted;
   margin-left: 1vw;
@@ -70,7 +69,8 @@
 }
 #Sidebarheader {
   height: 4vh;
-  margin-right: -1vw;
+  margin-right: -0vw;
+  margin-left: 0vw;
 
   background-color: black;
   color: white;
@@ -78,7 +78,6 @@
 }
 .MapTabsOuter {
   width: 100%;
-  height: 20vh;
   border: black 1px solid;
 }
 
