@@ -26,7 +26,7 @@ const Navbar = () => (
     </button>
     <div className="collapse navbar-collapse" id="collapsibleNavbar">
       <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
+        <li className="nav-item active">
           <Link href="/">
             <a className="nav-link">Home</a>
           </Link>
