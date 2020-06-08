@@ -9,7 +9,7 @@ import Link from "next/link";
 
 /*===Start code here===*/
 const Footerbar = () => (
-  <nav className="navbar navbar-expand navbar-light bg-light fixed-bottom">
+  <nav className="navbar navbar-expand navbar-light bg-light ">
     <div className="container">
       <a className="navbar-brand" href="#">
         &copy; Created by Flexxbo 2020
