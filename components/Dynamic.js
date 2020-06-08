@@ -37,13 +37,13 @@ function DynamicComponent({
     <div className="dynamiccomponent">
       <h2 className="mapheadline">Travel-Planner Cuba </h2>
       <div className="row gridrow">
-        <div className="col-2 gridcolumn">
+        <div className="col-2 gridcolumn sidebarhide">
           <h4 id="Sidebarheader">Your Trip</h4>
           <div className="Sidebarscroller">
             <MapSidebar globalTrip={globalTrip} remove={remove} />
           </div>
         </div>
-        <div className="col-10 gridcolumn">
+        <div className="col-10 col-12-md gridcolumn" id="columntest">
           <DynamicComponentWithNoSSR
             className="mapid"
             lat={21.737731}

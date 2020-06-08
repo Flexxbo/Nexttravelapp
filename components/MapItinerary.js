@@ -33,7 +33,7 @@ export default function MapItinerary({
 
       //! How do I solve, getting the data I need here, connected to the Destination Name by just using the data needed from trip array
       return (
-        <div key={item.key}>
+        <div key={item.key + "hotels"}>
           {i + 1 + ". " + item.name}
           <Collapsible
             key={item.key}
@@ -51,7 +51,7 @@ export default function MapItinerary({
             </p>
           </Collapsible>
           <Collapsible
-            key={item.key}
+            key={item.key + "tours"}
             className="ItineraryContent"
             id={i}
             trigger={<div>Tours</div>}

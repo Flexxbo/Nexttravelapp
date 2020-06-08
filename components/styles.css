@@ -31,6 +31,7 @@
   padding: 15px;
   color: white;
 }
+
 .pagetop {
   text-align: center;
   margin-top: 6vh;
@@ -51,6 +52,23 @@
   height: 5vh;
 }
 
+@media screen and (min-width: 0px) and (max-width: 850px) {
+  .sidebarhide {
+    display: none;
+  } /* show it on small screens */
+  #columntest {
+    margin: auto;
+  }
+  .navbar-nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 851px) and (max-width: 10000px) {
+  .sidebarhide {
+    display: block;
+  } /* hide it elsewhere */
+}
 
 .SidebarComp {
   border: black 1px dotted;
