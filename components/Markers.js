@@ -20,15 +20,14 @@ export default function Markers({ addToTrip, datastate, selectMarker }) {
       {datastate.map((item) => {
         const key = Math.random();
         return (
-          <span
-            className="spanclass"
-            position={item.fields.location}
-            key={key}
-            onClick={(e) => {
-              selectMarker(item.fields.name);
-            }}
-          >
-            <Marker key={key} position={item.fields.location}>
+          <span className="spanclass" position={item.fields.location} key={key}>
+            <Marker
+              key={key}
+              position={item.fields.location}
+              onClick={(e) => {
+                selectMarker(item.fields.name);
+              }}
+            >
               <Popup>
                 {item.fields.name} <br></br>
                 <button

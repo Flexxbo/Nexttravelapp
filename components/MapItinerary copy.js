@@ -9,9 +9,6 @@ import React, { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import { useForm, Controller } from "react-hook-form";
 import Datepicker from "./Datepicker";
-import Collapsiblecomp from "./Collapsible";
-import Collapsible from "react-collapsible";
-
 //import "react-datepicker/dist/react-datepicker.css";
 
 /*===Start code here===*/
@@ -33,40 +30,6 @@ export default function MapItinerary({
 
       //! How do I solve, getting the data I need here, connected to the Destination Name by just using the data needed from trip array
       return (
-        <div key={item.key}>
-          {i + 1 + ". " + item.name}
-          <Collapsible
-            key={item.key}
-            className="ItineraryContent"
-            id={i}
-            trigger={<div>Hotel</div>}
-          >
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible>
-          <Collapsible
-            key={item.key}
-            className="ItineraryContent"
-            id={i}
-            trigger={<div>Tours</div>}
-          >
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible>
-        </div>
-        /*
         <div key={item.key} className="ItineraryContent" id={i}>
           <h3>
             {i + 1}. {item.name}
@@ -83,7 +46,7 @@ export default function MapItinerary({
             addFromDateToGlobalTrip={addFromDateToGlobalTrip}
             addToDateToGlobalTrip={addToDateToGlobalTrip}
           />
-        </div>*/
+        </div>
       );
     });
   } else {
