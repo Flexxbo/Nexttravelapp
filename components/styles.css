@@ -9,7 +9,7 @@
   margin-right: 0vw;
 }
 .backgroundimage {
-  background-image: url("https://cdn.pixabay.com/photo/2016/02/13/13/11/cuba-1197800_960_720.jpg");
+  background-image: url("/oldtimer.jpg");
   /*background-image: url("`${require("./oldtimer.jpg")}`");*/
 
   /* Full height */

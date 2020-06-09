@@ -84,7 +84,7 @@ const createPDF = (globalTrip) => {
   });
   //console.log("this is somVar", somVar);
 
-  doc.save("generated.pdf");
+  doc.save("MyCubaTrip.pdf");
 };
 
 export default function PDFCreator(globalTrip) {

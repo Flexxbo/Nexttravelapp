@@ -10,7 +10,7 @@
 const Topbox = () => {
   return (
     <div className="topbox">
-      <img src="https://cdn.pixabay.com/photo/2014/08/03/02/58/cuba-408869_960_720.jpg"></img>
+      <img src="/oldtimer.jpg"></img>
       {/*<style jsx>{`
         .topbox {
           background-image: url("https://cdn.pixabay.com/photo/2017/03/17/11/50/havana-2151324_960_720.jpg");
