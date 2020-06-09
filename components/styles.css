@@ -25,6 +25,9 @@
   align-items: center;
   justify-content: center;
 }
+.logo {
+  height: 40px;
+}
 .backgroundimage > div {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.479);
