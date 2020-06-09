@@ -10,24 +10,23 @@
 const Topbox = () => {
   return (
     <div className="topbox">
-      <button type="button" className="buttonclass" className="btn btn-danger">
-        Danger
-      </button>
-
-      <style jsx>{`
+      <img src="https://cdn.pixabay.com/photo/2014/08/03/02/58/cuba-408869_960_720.jpg"></img>
+      {/*<style jsx>{`
         .topbox {
-          background-image: url("https://cdn.pixabay.com/photo/2015/12/28/10/19/hotel-1111199__340.jpg");
+          background-image: url("https://cdn.pixabay.com/photo/2017/03/17/11/50/havana-2151324_960_720.jpg");
           display: flex-box;
           justify-content: center;
-          border: 1px black solid;
           height: 25vw;
+          background-repeat: no-repeat;
         }
         ,
         .buttonclass {
           display: flex;
           align-items: center;
+          background-attachment: fixed;
+          background-position: center;
         }
-      `}</style>
+      `}</style>*/}
     </div>
   );
 };

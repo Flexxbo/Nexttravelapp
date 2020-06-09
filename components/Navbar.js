@@ -23,7 +23,6 @@ import {
 //import AboutUs from './AboutUs';
 //import ContactUs from './ContactUs';
 
-
 class BootstrapNavbar extends React.Component {
   render() {
     return (
@@ -31,19 +30,17 @@ class BootstrapNavbar extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <Navbar bg="light" variant="light" expand="lg" sticky="top">
-              <Navbar.Brand href="#home">React Bootstrap Navbar</Navbar.Brand>
+              <Navbar.Brand href="#home">
+                <b>Cuba - Your Travelplanner</b>
+              </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link eventKey="1" href="/">
+                  <Nav.Link active href="/">
                     Home
                   </Nav.Link>
-                  <Nav.Link eventKey="2" href="/about">
-                    About
-                  </Nav.Link>
-                  <Nav.Link eventKey="3" href="/maptest">
-                    Travelplanner
-                  </Nav.Link>
+                  <Nav.Link href="/about">Havana</Nav.Link>
+                  <Nav.Link href="/maptest">Travelplanner</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>

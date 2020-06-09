@@ -97,7 +97,12 @@
   width: 100%;
   border: black 1px solid;
 }
-
+.justText {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
 #MapItineraryOuter {
   width: 100%;
   margin-bottom: 6vh;

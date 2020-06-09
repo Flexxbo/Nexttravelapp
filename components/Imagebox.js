@@ -8,25 +8,29 @@
 
 /*===Start code here===*/
 
-const Imagebox = () => {
+const Imagebox = ({ image, Header, text }) => {
   return (
     <div className="card border-light mb-3" className="JSX-class">
-      <div className="card-header">Header</div>
+      <div className="card-header">{Header}</div>
       <div className="card-body">
-        <h4 className="card-title">Light card title</h4>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+        <img className="picure" src={image}></img>
+        <p className="card-text">{text}</p>
       </div>
 
       <style jsx>{`
         .JSX-class {
-          max-width: 25rem;
-          background-color: beige;
-          border: 1px solid tomato;
-          margin: 1vw;
+          background-color: rgb(0, 0, 0, 0.1);
           padding: 3rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .picure {
+          width: 300px;
+          height: 200px;
+          margin: auto;
+          padding: auto;
         }
       `}</style>
     </div>
