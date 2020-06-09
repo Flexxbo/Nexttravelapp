@@ -30,7 +30,7 @@ class BootstrapNavbar extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <Navbar bg="light" variant="light" expand="lg" sticky="top">
-              <Navbar.Brand href="#home">
+              <Navbar.Brand href="/">
                 <b>Cuba - Your Travelplanner</b>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
