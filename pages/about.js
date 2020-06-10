@@ -8,7 +8,6 @@
 import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
-import MapComponent from "../components/Dynamic";
 
 /*Start coding from here */
 

@@ -22,7 +22,7 @@ ReactDOMServer.renderToString(...);*/
   let displayedData = datastate.filter(
     (word) => word.fields.name === selectedMarker
   );
-
+  console.log(displayedData);
   return (
     <div className="MapTabsInner">
       <Tabs>

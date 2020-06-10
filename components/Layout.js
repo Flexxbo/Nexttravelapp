@@ -6,7 +6,6 @@
 
 /*===Put imports here===*/
 import Head from "next/head";
-import Debugtest from "./testing components/Debugtester";
 import Navbar from "./Navbar";
 import Footerbar from "./Footerbar";
 

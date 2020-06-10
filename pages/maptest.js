@@ -78,9 +78,6 @@ const maptest = () => {
         item.from = date;
         item.fromDeutsch = dateDeutsch;
       }
-      console.log("item.key in addToGlobalTrip", item.key);
-      console.log("keylement in addToGlobalTrip", keylement);
-      console.log("globaltrip after update", globalTrip);
     });
   };
   //+++update an object inside the array with data from Itinerary+++
@@ -92,10 +89,6 @@ const maptest = () => {
         item.to = date;
         item.toDeutsch = dateDeutsch;
       }
-
-      console.log("item.key in addToGlobalTrip", item.key);
-      console.log("keylement in addToGlobalTrip", keylement);
-      console.log("globaltrip after update", globalTrip);
     });
   };
   //+++remove function when clicked in sidebar will remove element from trip-array+++
@@ -123,7 +116,6 @@ const maptest = () => {
   return (
     <Layout>
       <div className="pagetop">
-
         {datastate ? (
           <MapComponent
             addToTrip={addToTrip} //!Achtung behalten!

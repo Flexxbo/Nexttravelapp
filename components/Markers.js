@@ -12,6 +12,8 @@ import { Circle, CircleMarker, Marker, Popup, Tooltip } from "react-leaflet";
 
 export default function Markers({ addToTrip, datastate, selectMarker }) {
   console.log("datastate in Markers", datastate);
+  console.log(typeof datastate);
+
   return (
     // * return marker component for each item in array, marker has popup on click which states name coming from contentful api
     //+++Needed to wrap marker in Span because marker does not accept onclick

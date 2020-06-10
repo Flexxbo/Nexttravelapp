@@ -11,6 +11,8 @@ import Link from "next/link";
 //import styles from "./Navbar.module.css";
 
 import React from "react";
+import NavDrop from "./NavDropdown2";
+
 import {
   Navbar,
   Nav,
@@ -42,6 +44,9 @@ class BootstrapNavbar extends React.Component {
                   </Nav.Link>
                   <Nav.Link href="/about">Havana</Nav.Link>
                   <Nav.Link href="/maptest">Travelplanner</Nav.Link>
+                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                    <NavDrop />
+                  </NavDropdown>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
