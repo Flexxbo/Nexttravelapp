@@ -7,6 +7,8 @@
 /*===Put imports here===*/
 import React, { useState, useEffect } from "react";
 import Centry from "../components/Contentfulcomplete";
+import Layout from "../components/Layout";
+
 /*===Start code here===*/
 const Content = (pid) => {
   const [datastate2, setDatastate2] = useState("");
@@ -29,7 +31,7 @@ const Content = (pid) => {
       .catch((err) => console.log("An error occured: " + err));
   }, []);
   //console.log("datastate2 is this:", datastate2);
-  //console.log("chosenData is this:", chosenData[0].fields.name);
+  console.log("chosenData is this:", chosenData);
 
   //let chosenData = datastate2.filter((item) => item.fields.slug == pid.pid);
   //datastate2.map((item) => console.log(item));
@@ -37,45 +39,53 @@ const Content = (pid) => {
   //console.log("chosenData", chosenData);
 
   return (
-    <div>
-      {chosenData.length >= 1 ? (
-        <div>
-          if chosenData.length >= 1 this gets displayed
-          <h1>
-            H1<br></br>
-            {chosenData[0].fields.name}
-          </h1>
-          <br></br>
+    <Layout>
+      <div>
+        {chosenData.length >= 1 ? (
           <div>
-            Info<br></br>
-            {chosenData[0].fields.info}
+            <h1>
+              H1<br></br>
+              {chosenData[0].fields.name}
+            </h1>
+            <br></br>
+            <div>
+              Info<br></br>
+              {chosenData[0].fields.info}
+            </div>
+            <br></br>
+            <div>
+              Tabone<br></br> chosenData[0].fields.image.fields.file.fileName
+              {chosenData[0].fields.tabOne}
+            </div>
+            <br></br>
+            <div>
+              Tab2<br></br>
+              {chosenData[0].fields.tabTwo}
+            </div>
+            <br></br>
+            <div>
+              Tab3<br></br>
+              {chosenData[0].fields.tabThree}
+            </div>
+            <br></br>
+            <div>
+              Tab4<br></br>
+              {chosenData[0].fields.tabFour}
+            </div>
+            <div>
+              <img
+                src="//images.ctfassets.net/ef40ww67o2nx/11QYLvUakuNenkXzGgCF7G/44b416a4f5f806cdbd6d21fdef9bd5fc/old-havana.jpg"
+                alt="test"
+              ></img>
+              {chosenData[0].fields.tabFour}
+            </div>
+            <br></br>
           </div>
-          <br></br>
-          <div>
-            Tabone<br></br>
-            {chosenData[0].fields.tabOne}
-          </div>
-          <br></br>
-          <div>
-            Tab2<br></br>
-            {chosenData[0].fields.tabTwo}
-          </div>
-          <br></br>
-          <div>
-            Tab3<br></br>
-            {chosenData[0].fields.tabThree}
-          </div>
-          <br></br>
-          <div>
-            Tab4<br></br>
-            {chosenData[0].fields.tabFour}
-          </div>
-          <br></br>
-        </div>
-      ) : (
-        <div> Waiting</div>
-      )}
-    </div>
+        ) : (
+          <div> Waiting</div>
+        )}
+      </div>
+    </Layout>
   );
 };
 
