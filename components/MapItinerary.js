@@ -33,38 +33,48 @@ export default function MapItinerary({
 
       //! How do I solve, getting the data I need here, connected to the Destination Name by just using the data needed from trip array
       return (
-        <div key={item.key + "hotels"}>
+        <div className="itineraryItem" key={item.key + "hotels"}>
           {i + 1 + ". " + item.name}
+          <br></br>
+          <Datepicker
+            keyelement={item.key}
+            addFromDateToGlobalTrip={addFromDateToGlobalTrip}
+            addToDateToGlobalTrip={addToDateToGlobalTrip}
+          />
           <Collapsible
             key={item.key}
             className="ItineraryContent"
             id={i}
-            trigger={<div>Hotel</div>}
+            trigger={
+              <div className="collapseHotel">
+                <p className="choteltext">{`>>>Hotel<<<`}</p>
+              </div>
+            }
           >
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
+            <div className="hoteldiv">
+              <img className="hotelpic" src="/hote_square_250_1.jpg"></img>
+              <img className="hotelpic" src="/hote_square_250_2.jpg"></img>
+              <img className="hotelpic" src="/hote_square_250_3.jpg"></img>
+              <img className="hotelpic" src="/hote_square_250_4.jpg"></img>
+            </div>
           </Collapsible>
-          <Collapsible
+          {/*<Collapsible
             key={item.key + "tours"}
             className="ItineraryContent"
             id={i}
-            trigger={<div>Tours</div>}
+            trigger={
+              <div className="collapseHotel">
+                <p className="choteltext">{`>>>Tours<<<`}</p>
+              </div>
+            }
           >
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible>
+            <div className="hoteldiv">
+              <img className="hotelpic" src="/hote_square_250_1.jpg"></img>
+              <img className="hotelpic" src="/hote_square_250_2.jpg"></img>
+              <img className="hotelpic" src="/hote_square_250_3.jpg"></img>
+              <img className="hotelpic" src="/hote_square_250_4.jpg"></img>
+            </div>
+          </Collapsible> */}
         </div>
         /*
         <div key={item.key} className="ItineraryContent" id={i}>

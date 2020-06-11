@@ -30,7 +30,15 @@ const createPDF = (globalTrip) => {
     if (item.identifier == "SCU") somVar = SCU;
     if (item.identifier == "BAR") somVar = BAR;
 
-    if (i == 0 || i == 7 || i == 14 || i == 21 || i == 28) {
+    if (i == 0) {
+      return (
+        doc.text(80, 10, "Your Travel Itinerary"),
+        doc.addImage(somVar, "JPEG", 20, 20, 40, 30),
+        doc.text(80, 30, i + 1 + "." + item.name),
+        doc.text(80, 40, "from: " + item.fromDeutsch),
+        doc.text(80, 50, "to: " + item.toDeutsch)
+      );
+    } else if (i == 7 || i == 14 || i == 21 || i == 28) {
       return (
         doc.addImage(somVar, "JPEG", 20, 20, 40, 30),
         doc.text(80, 30, i + 1 + "." + item.name),

@@ -56,7 +56,7 @@ const Content = (pid) => {
             <br></br>
             <div className="justText">
               <h3>{chosenData[0].fields.name} More Info</h3>
-              <br></br> chosenData[0].fields.image.fields.file.fileName
+              <br></br>
               {chosenData[0].fields.tabOne}
             </div>
             <img

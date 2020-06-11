@@ -162,3 +162,24 @@ input,
   padding: 30px;
   background-color: rgb(0, 0, 0, 0.5);
 }
+.itineraryItem {
+  border: black 2px dotted;
+  padding: 20px;
+  text-align: center;
+}
+.collapseHotel {
+  text-align: center;
+}
+.choteltext {
+  background-color: black;
+  color: white;
+}
+.hotelpic {
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+}
+.hoteldiv {
+  display: flex;
+  justify-content: space-evenly;
+}
