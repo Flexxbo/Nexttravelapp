@@ -42,7 +42,7 @@ class BootstrapNavbar extends React.Component {
                   <Nav.Link active href="/">
                     Home
                   </Nav.Link>
-                  <Nav.Link href="/about">Havana</Nav.Link>
+                  <Nav.Link href="/about">About</Nav.Link>
                   <Nav.Link href="/maptest">Travelplanner</Nav.Link>
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDrop />

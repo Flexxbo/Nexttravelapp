@@ -18,7 +18,7 @@ const Footerbar = () => (
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link href="/">
-              <a className="nav-link">Top</a>
+              <a className="nav-link">Home</a>
             </Link>
           </li>
           <li className="nav-item">
@@ -28,7 +28,7 @@ const Footerbar = () => (
           </li>
           <li className="nav-item">
             <Link href="/maptest">
-              <a className="nav-link">Maptest</a>
+              <a className="nav-link">Travelplanner</a>
             </Link>
           </li>
         </ul>

@@ -42,43 +42,48 @@ const Content = (pid) => {
     <Layout>
       <div>
         {chosenData.length >= 1 ? (
-          <div>
-            <h1>
-              H1<br></br>
+          <div className="pagetop">
+            <h2 className="mapheadline">
+              <br></br>
               {chosenData[0].fields.name}
-            </h1>
+            </h2>
             <br></br>
-            <div>
-              Info<br></br>
+            <div className="justText">
+              <h3>{chosenData[0].fields.name} Info</h3>
+              <br></br>
               {chosenData[0].fields.info}
             </div>
             <br></br>
-            <div>
-              Tabone<br></br> chosenData[0].fields.image.fields.file.fileName
+            <div className="justText">
+              <h3>{chosenData[0].fields.name} More Info</h3>
+              <br></br> chosenData[0].fields.image.fields.file.fileName
               {chosenData[0].fields.tabOne}
             </div>
+            <img
+              className="contentpics"
+              src={chosenData[0].fields.image.fields.file.url}
+              alt="test"
+            ></img>
+
             <br></br>
-            <div>
-              Tab2<br></br>
+            <div className="justText">
+              <h3>{chosenData[0].fields.name} And More Info</h3>
+              <br></br>
               {chosenData[0].fields.tabTwo}
             </div>
             <br></br>
-            <div>
-              Tab3<br></br>
+            <div className="justText">
+              <h3>{chosenData[0].fields.name} Much More Info</h3>
+              <br></br>
               {chosenData[0].fields.tabThree}
             </div>
             <br></br>
-            <div>
-              Tab4<br></br>
+            <div className="justText">
+              <h3>{chosenData[0].fields.name} And Even More Info</h3>
+              <br></br>
               {chosenData[0].fields.tabFour}
             </div>
-            <div>
-              <img
-                src="//images.ctfassets.net/ef40ww67o2nx/11QYLvUakuNenkXzGgCF7G/44b416a4f5f806cdbd6d21fdef9bd5fc/old-havana.jpg"
-                alt="test"
-              ></img>
-              {chosenData[0].fields.tabFour}
-            </div>
+
             <br></br>
           </div>
         ) : (
@@ -91,7 +96,7 @@ const Content = (pid) => {
 
 export default Content;
 
-//{datastate2 ? <div>it worked this time</div> : <div>it is still loading</div>} {chosenData[0].fields.name}
+//{datastate2 ? <div>it worked this time</div> : <div>it is still loading</div>} {chosenData[0].fields.image.file.url}
 /* ===Better Comments=== */
 // "* Usage - Comment everything from the beginning, start a task by adding a comment, then work on task
 // "! Alert - Whenever you need an alert

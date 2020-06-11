@@ -8,6 +8,7 @@
 import Layout from "../components/Layout";
 import Imageboxcontainer from "../components/Imageboxcontainer";
 import Topbox from "../components/Topbox";
+import Collapsible from "react-collapsible";
 
 /*Start coding from here */
 
@@ -15,52 +16,85 @@ const about = () => {
   return (
     <Layout>
       <div className="pagetop">
-        <h1 className="justText">Havanna</h1>
-        <p className="justText">
-          Havana is a surprisingly expensive city to stay in; if you stay in
-          hotels and eat in restaurants it can work out to be nearly as
-          expensive as other popular international destinations. The problem is
-          that Cuba has a dual economy, if you could live on pesos it would be
-          incredibly cheap. Sadly, as a tourist this is virtually impossible.
-          Most peso hotels won't take foreigners or, if they do you have to pay
-          in CUC. If you are on any kind of a budget it is advised to stay in
-          casas particulares; it is much cheaper, often more comfortable and the
-          food (a recurring theme in Cuba) is almost invariably better. Food,
-          transport, but also certain souvenirs you can buy both in CUC and CUP.
-          In the old town you will find many expensive places, especially on
-          pedestrian roads like O'Reilly, Obispo and Obrapia. Some parallel
-          streets can be a lot cheaper and even peso restaurants can be found.
-          Don't get fooled by the art and souvenir shops on those main roads.{" "}
-        </p>
-        <Topbox />
-        <h2 className="justText">
-          <br></br>Things to do
+        <h2 className="mapheadline">
+          About <br></br> {`<Felix Bücheler - Frontend Developer/>`}
         </h2>
-        <p className="justText">
-          Havana is a surprisingly expensive city to stay in; if you stay in
-          hotels and eat in restaurants it can work out to be nearly as
-          expensive as other popular international destinations. The problem is
-          that Cuba has a dual economy, if you could live on pesos it would be
-          incredibly cheap. Sadly, as a tourist this is virtually impossible.
-          Most peso hotels won't take foreigners or, if they do you have to pay
-          in CUC. If you are on any kind of a budget it is advised to stay in
-          casas particulares; it is much cheaper, often more comfortable and the
-          food (a recurring theme in Cuba) is almost invariably better. Food,
-          transport, but also certain souvenirs you can buy both in CUC and CUP.
-          In the old town you will find many expensive places, especially on
-          pedestrian roads like O'Reilly, Obispo and Obrapia. Some parallel
-          streets can be a lot cheaper and even peso restaurants can be found.
-          Don't get fooled by the art and souvenir shops on those main roads.{" "}
-        </p>
-        <Imageboxcontainer />
-        {/*<MapComponent /> */}
-        <style jsx>{`
-          .pagetop {
-            text-align: center;
-            border: 1px black solid;
-          }
-        `}</style>
+
+        <h3 className="justText">
+          Hi, get in touch with me and checkout my other projects!
+        </h3>
+        <Collapsible trigger=">>>Contact<<<">
+          <h4>
+            <img className="logoclass" src="/mail.png"></img>
+            <a target="_blank" href="mailto:flexxbo@gmail.com">
+              flexxbo@gmail.com
+            </a>
+          </h4>
+          <br></br>
+          <h4>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/felix-b-webdeveloper/"
+            >
+              <img className="logoclass" src="/1200x630wa.png"></img>
+              felix-b-webdeveloper
+            </a>
+          </h4>
+          <br></br>
+          <h4>
+            <img className="logoclass" src="/github.png"></img>
+            <a target="_blank" href="https://github.com/Flexxbo">
+              Flexxbo
+            </a>
+          </h4>
+          <br></br>
+          <h4>
+            Website:
+            <a
+              target="_blank"
+              href="https://flexxbo.github.io/Portfolio-Website/"
+            >
+              Felix Bücheler Portfolio-Website
+            </a>
+          </h4>
+        </Collapsible>
+        <br></br>
+        <Collapsible trigger=">>>Projects<<<">
+          <h4 className="bordersss">
+            <a
+              target="_blank"
+              href="https://flexxbo.github.io/Portfolio-Website/"
+            >
+              <img
+                className="picclass"
+                src="/PortfolioWebsite_Preview_Felix Buecheler.png"
+              ></img>
+              <br></br>
+              Portfolio-Website
+            </a>
+          </h4>
+          <br></br> <br></br>
+          <br></br>
+          <h4 className="bordersss">
+            <a target="_blank" href="https://todolistreactj.herokuapp.com/">
+              <img className="picclass" src="/FullStackToDo.png"></img>
+              <br></br>
+              Full-Stack ToDo-List
+            </a>
+          </h4>
+          <br></br> <br></br>
+          <br></br>
+          <h4 className="bordersss">
+            <a target="_blank" href="https://amiabot.herokuapp.com/">
+              <img className="picclass" src="/BotChecker.png"></img>
+              <br></br>
+              BotChecker
+            </a>
+          </h4>
+          <br></br>
+        </Collapsible>
       </div>
+      <div className="marginbox"></div>
     </Layout>
   );
 };
